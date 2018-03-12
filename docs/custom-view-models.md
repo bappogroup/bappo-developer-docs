@@ -4,7 +4,12 @@ title: $models
 ---
 
 The prop `$models` is passed to the top-level React component that is used as a
-custom view. It is a dictionary of Object Key -> [Object Model](#ObjectModel) defined in the running app.
+custom view. It is a dictionary of Object Key -> [Object Model](#ObjectModel)
+defined in the running app.
+
+For example, if an app has two objects Customer and
+Contact, `$models` will have two properties `Customer` and `Contact`, each one
+being an [Object Model](#ObjectModel).
 
 ## ObjectModel
 
@@ -282,6 +287,22 @@ $models.Contact.findAll({
         ],
       },
     ],
+  },
+});
+```
+
+### OptionPage
+
+The `page` option lets you do pagination.
+
+Example:
+
+```js
+// get the 21st - 30th customers
+const tenCustomers = await $models.Customer.findAll({
+  page: {
+    offset: 20,
+    limit: 10,
   },
 });
 ```
