@@ -19,7 +19,7 @@ const siteConfig = {
   title: 'Bappo Developer' /* title for your website */,
   // tagline: 'A website for testing',
   url: 'https://bappo.com' /* your website url */,
-  baseUrl: '/' /* base url for your project */,
+  baseUrl: '/bappo-developer-docs/' /* base url for your project */,
   projectName: 'bappo-developer-docs',
   headerLinks: [
     { doc: 'getting-started', label: 'Tutorial' },
