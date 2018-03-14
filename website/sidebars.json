@@ -1,6 +1,8 @@
 {
-  "docs": {
-    "The Basics": ["getting-started"],
-    "Custom View": ["custom-view-models"]
+  "tutorial": {
+    "The Basics": ["getting-started", "create-custom-view"]
+  },
+  "reference": {
+    "Custom View": ["custom-view-models", "custom-view-popup"]
   }
 }

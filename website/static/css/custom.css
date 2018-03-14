@@ -1,7 +1,15 @@
 /* your custom css */
 
+.docsNavContainer {
+  width: 240px;
+}
+
 .hljs {
   border-left: 4px solid #008FB2;
+}
+
+.wrapper {
+  max-width: 1200px;
 }
 
 @media only screen and (min-device-width: 360px) and (max-device-width: 736px) {

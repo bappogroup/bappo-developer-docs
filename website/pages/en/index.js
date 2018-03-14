@@ -80,9 +80,9 @@ class HomeSplash extends React.Component {
         <div className="inner">
           <ProjectTitle />
           <PromoSection>
-            <Button href="#try">Try It Out</Button>
-            <Button href={docUrl('doc1.html', language)}>Example Link</Button>
-            <Button href={docUrl('doc2.html', language)}>Example Link 2</Button>
+            <Button href={docUrl('getting-started.html', language)}>
+              Get Started
+            </Button>
           </PromoSection>
         </div>
       </SplashContainer>
@@ -94,7 +94,8 @@ const Block = props => (
   <Container
     padding={['bottom', 'top']}
     id={props.id}
-    background={props.background}>
+    background={props.background}
+  >
     <GridBlock align="center" contents={props.children} layout={props.layout} />
   </Container>
 );
@@ -121,7 +122,8 @@ const Features = props => (
 const FeatureCallout = props => (
   <div
     className="productShowcaseSection paddingBottom"
-    style={{textAlign: 'center'}}>
+    style={{ textAlign: 'center' }}
+  >
     <h2>Feature Callout</h2>
     <MarkdownBlock>These are features of this project</MarkdownBlock>
   </div>
@@ -204,12 +206,14 @@ class Index extends React.Component {
       <div>
         <HomeSplash language={language} />
         <div className="mainContainer">
+          {/*
           <Features />
           <FeatureCallout />
           <LearnHow />
           <TryOut />
           <Description />
           <Showcase language={language} />
+          */}
         </div>
       </div>
     );

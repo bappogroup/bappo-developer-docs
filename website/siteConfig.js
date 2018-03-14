@@ -22,7 +22,8 @@ const siteConfig = {
   baseUrl: '/' /* base url for your project */,
   projectName: 'bappo',
   headerLinks: [
-    { doc: 'getting-started', label: 'Docs' },
+    { doc: 'getting-started', label: 'Tutorial' },
+    { doc: 'custom-view-models', label: 'Reference' },
     // { doc: 'doc4', label: 'API' },
     // { page: 'help', label: 'Help' },
     // { blog: true, label: 'Blog' },
