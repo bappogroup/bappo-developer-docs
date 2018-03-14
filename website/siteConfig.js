@@ -20,7 +20,7 @@ const siteConfig = {
   // tagline: 'A website for testing',
   url: 'https://bappo.com' /* your website url */,
   baseUrl: '/' /* base url for your project */,
-  projectName: 'bappo',
+  projectName: 'bappo-developer-docs',
   headerLinks: [
     { doc: 'getting-started', label: 'Tutorial' },
     { doc: 'custom-view-models', label: 'Reference' },
@@ -51,7 +51,7 @@ const siteConfig = {
   },*/
   // This copyright info is used in /core/Footer.js and blog rss/atom feeds.
   copyright: 'Copyright © ' + new Date().getFullYear() + ' Bappo',
-  organizationName: 'bappo', // or set an env variable ORGANIZATION_NAME
+  organizationName: 'bappogroup', // or set an env variable ORGANIZATION_NAME
   // projectName: 'test-site', // or set an env variable PROJECT_NAME
   highlight: {
     // Highlight.js theme to use for syntax highlighting in code blocks
