@@ -1,0 +1,122 @@
+<html lang="en"><head><meta charset="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>$popup · Bappo Developer</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta property="og:title" content="$popup · Bappo Developer"/><meta property="og:type" content="website"/><meta property="og:url" content="https://bappo.com/index.html"/><meta property="og:description" content="The prop `$popup` is passed to the top-level React component that is used as a"/><link rel="shortcut icon" href="/img/favicon.png"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><link rel="stylesheet" href="/css/main.css"/></head><body class="sideNavVisible"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/"><img class="logo" src="/img/docusaurus.svg"/><h2 class="headerTitle">Bappo Developer</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li><a href="/docs/getting-started.html" target="_self">Tutorial</a></li><li><a href="/docs/custom-view-models.html" target="_self">Reference</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="container docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><i></i></div><h2><i>›</i><span>Custom View</span></h2></div><div class="navGroups"><div class="navGroup navGroupActive"><h3>Custom View</h3><ul><li class="navListItem"><a class="navItem" href="/docs/custom-view-models.html">$models</a></li><li class="navListItem navListItemActive"><a class="navItem navItemActive" href="/docs/custom-view-popup.html">$popup</a></li></ul></div></div></section></div><script>
+          var toggler = document.getElementById('navToggler');
+          var nav = document.getElementById('docsNav');
+          toggler.onclick = function() {
+            nav.classList.toggle('docsSliderActive');
+          };
+        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1>$popup</h1></header><article><div><span><p>The prop <code>$popup</code> is passed to the top-level React component that is used as a
+custom view. It can be used to interact with forms and popups.</p>
+<h2><a class="anchor" aria-hidden="true" name="methods"></a><a href="#methods" aria-hidden="true" class="hash-link" ><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Methods</h2>
+<ul>
+<li><a href="#form"><code>form()</code></a></li>
+</ul>
+<hr>
+<h1><a class="anchor" aria-hidden="true" name="reference"></a><a href="#reference" aria-hidden="true" class="hash-link" ><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Reference</h1>
+<h2><a class="anchor" aria-hidden="true" name="methods"></a><a href="#methods" aria-hidden="true" class="hash-link" ><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Methods</h2>
+<h3><a class="anchor" aria-hidden="true" name="form"></a><a href="#form" aria-hidden="true" class="hash-link" ><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>form()</code></h3>
+<p><strong>static form(options: <a href="#UserDefinedFormOptions">UserDefinedFormOptions</a> | <a href="#CustomFormOptions">CustomFormOptions</a>)</strong></p>
+<p>Open a user-defined Form or a custom form on-the-fly.</p>
+<p>User-defined form examples:</p>
+<pre><code class="hljs css javascript"><span class="hljs-comment">// Open user-defined form</span>
+$popup.form({
+  <span class="hljs-attr">formKey</span>: <span class="hljs-string">'ContactForm'</span>,
+  <span class="hljs-keyword">async</span> onSubmit(contact) {
+    <span class="hljs-keyword">await</span> $models.Contact.create(contact);
+  },
+});
+</code></pre>
+<p>Custom form examples:</p>
+<pre><code class="hljs css javascript"><span class="hljs-comment">// Open a form with database fields from one Object</span>
+$popup.form({
+  <span class="hljs-attr">objectKey</span>: <span class="hljs-string">'Contact'</span>,
+  <span class="hljs-attr">fields</span>: [<span class="hljs-string">'name'</span>, <span class="hljs-string">'email'</span>],
+});
+
+<span class="hljs-comment">// Overwrite database field config</span>
+$popup.form({
+  <span class="hljs-attr">objectKey</span>: <span class="hljs-string">'Contact'</span>,
+  <span class="hljs-attr">fields</span>: [
+    {
+      <span class="hljs-attr">path</span>: <span class="hljs-string">'name'</span>, <span class="hljs-comment">// DB field name, required</span>
+      label: <span class="hljs-string">'Contact Name'</span>,
+      validate(value) {
+        <span class="hljs-keyword">if</span> (value &amp;&amp; value.length &gt; <span class="hljs-number">3</span>) {
+          <span class="hljs-keyword">return</span>; <span class="hljs-comment">// validation passed</span>
+        }
+        <span class="hljs-comment">// error message</span>
+        <span class="hljs-keyword">return</span> <span class="hljs-string">'Contact name must be more than 3 characters long'</span>;
+      },
+    },
+  ],
+});
+
+<span class="hljs-comment">// Use generic input fields (not in database)</span>
+$popup.form({
+  <span class="hljs-attr">fields</span>: [
+    {
+      <span class="hljs-attr">name</span>: <span class="hljs-string">'favouriteFruit'</span>, <span class="hljs-comment">// field name, required for generic input</span>
+      type: <span class="hljs-string">'FixedList'</span>, <span class="hljs-comment">// field type, required</span>
+      properties: { <span class="hljs-comment">// field properties, required</span>
+        options: [
+          { <span class="hljs-attr">id</span>: <span class="hljs-string">'1'</span>, <span class="hljs-attr">label</span>: <span class="hljs-string">'Apple'</span> },
+          { <span class="hljs-attr">id</span>: <span class="hljs-string">'2'</span>, <span class="hljs-attr">label</span>: <span class="hljs-string">'Banana'</span> },
+          { <span class="hljs-attr">id</span>: <span class="hljs-string">'3'</span>, <span class="hljs-attr">label</span>: <span class="hljs-string">'Orange'</span> },
+        ],
+      },
+      <span class="hljs-attr">label</span>: <span class="hljs-string">'Your Favourite Fruit'</span>,
+    },
+  ],
+  onSubmit({ favouriteFruit }) {
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'Your favourite fruit is '</span>, favouriteFruit);
+  },
+});
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" name="types"></a><a href="#types" aria-hidden="true" class="hash-link" ><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Types</h2>
+<h3><a class="anchor" aria-hidden="true" name="commonformoptions"></a><a href="#commonformoptions" aria-hidden="true" class="hash-link" ><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>CommonFormOptions</h3>
+<table>
+<thead>
+<tr><th style="text-align:center">Property</th><th style="text-align:center">Type</th><th style="text-align:center">Required</th><th>Description</th></tr>
+</thead>
+<tbody>
+<tr><td style="text-align:center">initialValues</td><td style="text-align:center"><a href="custom-view-models#RecordObject">RecordObject</a></td><td style="text-align:center">No</td><td>Field initial values when form is opened</td></tr>
+<tr><td style="text-align:center">onSumbit</td><td style="text-align:center">(values: <a href="custom-view-models#RecordObject">RecordObject</a>) =&gt; any</td><td style="text-align:center">No</td><td>Callback function that is called when form is submitted</td></tr>
+<tr><td style="text-align:center">title</td><td style="text-align:center">string</td><td style="text-align:center">No</td><td>Form title</td></tr>
+</tbody>
+</table>
+<h3><a class="anchor" aria-hidden="true" name="userdefinedformoptions"></a><a href="#userdefinedformoptions" aria-hidden="true" class="hash-link" ><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>UserDefinedFormOptions</h3>
+<p>All properties in <a href="#CommonFormOptions">CommonFormOptions</a> plus the table below:</p>
+<table>
+<thead>
+<tr><th style="text-align:center">Property</th><th style="text-align:center">Type</th><th style="text-align:center">Required</th><th>Description</th></tr>
+</thead>
+<tbody>
+<tr><td style="text-align:center">formKey</td><td style="text-align:center">string</td><td style="text-align:center">Yes</td><td>Form key</td></tr>
+</tbody>
+</table>
+<h3><a class="anchor" aria-hidden="true" name="customformoptions"></a><a href="#customformoptions" aria-hidden="true" class="hash-link" ><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>CustomFormOptions</h3>
+<p>All properties in <a href="#CommonFormOptions">CommonFormOptions</a> plus the table below:</p>
+<table>
+<thead>
+<tr><th style="text-align:center">Property</th><th style="text-align:center">Type</th><th style="text-align:center">Required</th><th>Description</th></tr>
+</thead>
+<tbody>
+<tr><td style="text-align:center">fields</td><td style="text-align:center"><a href="#FormFieldConfig">FormFieldConfig</a>[]</td><td style="text-align:center">Yes</td><td>Field configurations</td></tr>
+<tr><td style="text-align:center">objectKey</td><td style="text-align:center">string</td><td style="text-align:center">No</td><td>Object key of all fields</td></tr>
+</tbody>
+</table>
+<h3><a class="anchor" aria-hidden="true" name="formfieldconfig"></a><a href="#formfieldconfig" aria-hidden="true" class="hash-link" ><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>FormFieldConfig</h3>
+<table>
+<thead>
+<tr><th style="text-align:center">Property</th><th style="text-align:center">Type</th><th style="text-align:center">Field Type</th><th style="text-align:center">Required</th><th>Description</th></tr>
+</thead>
+<tbody>
+<tr><td style="text-align:center">name</td><td style="text-align:center">string</td><td style="text-align:center">Any</td><td style="text-align:center">If a generic field</td><td>Name that appears in the object passed to <code>onSubmit</code></td></tr>
+<tr><td style="text-align:center">label</td><td style="text-align:center">string</td><td style="text-align:center">Any</td><td style="text-align:center">No</td><td>Field label</td></tr>
+<tr><td style="text-align:center">readOnly</td><td style="text-align:center">boolean</td><td style="text-align:center">Any</td><td style="text-align:center">No</td><td>Field is read-only</td></tr>
+<tr><td style="text-align:center">validate</td><td style="text-align:center">value =&gt; ?string</td><td style="text-align:center">Any</td><td style="text-align:center">No</td><td>Validation function. Return an error message string or <code>undefined</code> if validation passes</td></tr>
+<tr><td style="text-align:center">path</td><td style="text-align:center">string</td><td style="text-align:center">Database Field</td><td style="text-align:center">Yes</td><td>DB Field name</td></tr>
+<tr><td style="text-align:center">type</td><td style="text-align:center"><a href="#FieldType">FieldType</a></td><td style="text-align:center">Generic Field</td><td style="text-align:center">Yes</td><td>Field type</td></tr>
+<tr><td style="text-align:center">properties</td><td style="text-align:center"><a href="#FieldProperties">FieldProperties</a></td><td style="text-align:center">Generic Field</td><td style="text-align:center">Yes</td><td>Field properties</td></tr>
+</tbody>
+</table>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="custom-view-models.html">← $models</a></div></div></div></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/docusaurus.svg" alt="Bappo Developer" width="66" height="58"/></a><div><h5>Docs</h5><a href="/docs/en/getting-started.html">Getting Started</a><a href="/docs/en/doc2.html">Guides (or other categories)</a><a href="/docs/en/doc3.html">API Reference (or other categories)</a></div><div><h5>Community</h5><a href="/en/users.html">User Showcase</a><a href="http://stackoverflow.com/questions/tagged/" target="_blank">Stack Overflow</a><a href="https://discordapp.com/">Project Chat</a><a href="https://twitter.com/" target="_blank">Twitter</a></div><div><h5>More</h5><a href="/blog">Blog</a></div></section><a href="https://code.facebook.com/projects/" target="_blank" class="fbOpenSource"><img src="/img/oss_logo.png" alt="Facebook Open Source" width="170" height="45"/></a><section class="copyright">Copyright © 2018 Bappo</section></footer></div></body></html>

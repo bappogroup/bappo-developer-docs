@@ -1,0 +1,255 @@
+<html lang="en"><head><meta charset="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>$models · Bappo Developer</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta property="og:title" content="$models · Bappo Developer"/><meta property="og:type" content="website"/><meta property="og:url" content="https://bappo.com/index.html"/><meta property="og:description" content="The prop `$models` is passed to the top-level React component that is used as a"/><link rel="shortcut icon" href="/img/favicon.png"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><link rel="stylesheet" href="/css/main.css"/></head><body class="sideNavVisible"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/"><img class="logo" src="/img/docusaurus.svg"/><h2 class="headerTitle">Bappo Developer</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li><a href="/docs/getting-started.html" target="_self">Tutorial</a></li><li><a href="/docs/custom-view-models.html" target="_self">Reference</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="container docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><i></i></div><h2><i>›</i><span>Custom View</span></h2></div><div class="navGroups"><div class="navGroup navGroupActive"><h3>Custom View</h3><ul><li class="navListItem navListItemActive"><a class="navItem navItemActive" href="/docs/custom-view-models.html">$models</a></li><li class="navListItem"><a class="navItem" href="/docs/custom-view-popup.html">$popup</a></li></ul></div></div></section></div><script>
+          var toggler = document.getElementById('navToggler');
+          var nav = document.getElementById('docsNav');
+          toggler.onclick = function() {
+            nav.classList.toggle('docsSliderActive');
+          };
+        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1>$models</h1></header><article><div><span><p>The prop <code>$models</code> is passed to the top-level React component that is used as a
+custom view. It is a dictionary of Object Key -&gt; <a href="#ObjectModel">Object Model</a>
+defined in the running app.</p>
+<p>For example, if an app has two objects Customer and
+Contact, <code>$models</code> will have two properties <code>Customer</code> and <code>Contact</code>, each one
+being an <a href="#ObjectModel">Object Model</a>.</p>
+<h1><a class="anchor" aria-hidden="true" name="objectmodel"></a><a href="#objectmodel" aria-hidden="true" class="hash-link" ><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>ObjectModel</h1>
+<p>ORM-style model that can be used to query records of an Object.</p>
+<h2><a class="anchor" aria-hidden="true" name="static-methods"></a><a href="#static-methods" aria-hidden="true" class="hash-link" ><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Static Methods</h2>
+<ul>
+<li><a href="#bulkcreate"><code>bulkCreate()</code></a></li>
+<li><a href="#bulkupdate"><code>bulkUpdate()</code></a></li>
+<li><a href="#create"><code>create()</code></a></li>
+<li><a href="#destroy"><code>destroy()</code></a></li>
+<li><a href="#destroybyid"><code>destroyById()</code></a></li>
+<li><a href="#findall"><code>findAll()</code></a></li>
+<li><a href="#findandcountall"><code>findAndCountAll()</code></a></li>
+<li><a href="#findbyid"><code>findById()</code></a></li>
+<li><a href="#findone"><code>findOne()</code></a></li>
+<li><a href="#update"><code>update()</code></a></li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" name="bulkcreate"></a><a href="#bulkcreate" aria-hidden="true" class="hash-link" ><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>bulkCreate()</code></h3>
+<p><strong>static bulkCreate(records: <a href="#RecordObject">RecordObject</a>[]): Promise&lt;<a href="#ObjectModel">ObjectModel</a>[]&gt;</strong></p>
+<p>Create multiple records in the database.</p>
+<p>Examples:</p>
+<pre><code class="hljs css javascript"><span class="hljs-keyword">const</span> newContacts = <span class="hljs-keyword">await</span> $models.Contact.bulkCreate([
+  { <span class="hljs-attr">name</span>: <span class="hljs-string">'Alice'</span>, <span class="hljs-attr">email</span>: <span class="hljs-string">'a@bappo.com'</span>, <span class="hljs-attr">customer_id</span>: <span class="hljs-string">'1'</span> },
+  { <span class="hljs-attr">name</span>: <span class="hljs-string">'Bob'</span>, <span class="hljs-attr">email</span>: <span class="hljs-string">'b@bappo.com'</span>, <span class="hljs-attr">customer_id</span>: <span class="hljs-string">'1'</span> },
+  { <span class="hljs-attr">name</span>: <span class="hljs-string">'Charles'</span>, <span class="hljs-attr">email</span>: <span class="hljs-string">'c@bappo.com'</span>, <span class="hljs-attr">customer_id</span>: <span class="hljs-string">'2'</span> },
+]);
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" name="bulkupdate"></a><a href="#bulkupdate" aria-hidden="true" class="hash-link" ><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>bulkUpdate()</code></h3>
+<p><strong>static bulkUpdate(recordUpdates: <a href="#RecordObject">RecordObject</a>[]): Promise&lt;void&gt;</strong></p>
+<p>Update multiple records in the database. Records are found by matching <code>id</code>, so
+<code>id</code> is required in each <code>recordUpdate</code>.</p>
+<p>Examples:</p>
+<pre><code class="hljs css javascript">$models.Contact.bulkUpdate([
+  { <span class="hljs-attr">id</span>: <span class="hljs-string">'1'</span>, <span class="hljs-attr">name</span>: <span class="hljs-string">'a.new@bappo.com'</span> },
+  { <span class="hljs-attr">id</span>: <span class="hljs-string">'2'</span>, <span class="hljs-attr">customer_id</span>: <span class="hljs-string">'2'</span> },
+]);
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" name="create"></a><a href="#create" aria-hidden="true" class="hash-link" ><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>create()</code></h3>
+<p><strong>static create(record: <a href="#RecordObject">RecordObject</a>): Promise&lt;<a href="#ObjectModel">ObjectModel</a>&gt;</strong></p>
+<p>Create a record in the database.</p>
+<p>Examples:</p>
+<pre><code class="hljs css javascript"><span class="hljs-keyword">const</span> newContact = <span class="hljs-keyword">await</span> $models.Contact.create({
+  <span class="hljs-attr">name</span>: <span class="hljs-string">'Alice'</span>,
+  <span class="hljs-attr">email</span>: <span class="hljs-string">'a@bappo.com'</span>,
+  <span class="hljs-attr">customer_id</span>: <span class="hljs-string">'1'</span>,
+});
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" name="destroy"></a><a href="#destroy" aria-hidden="true" class="hash-link" ><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>destroy()</code></h3>
+<p><strong>static destroy(options?: { where?: <a href="#OptionWhere">OptionWhere</a> }): Promise&lt;void&gt;</strong></p>
+<p>Delete records in the database matching a where clause.</p>
+<p>Examples:</p>
+<pre><code class="hljs css javascript">$models.Contact.destroy({
+  <span class="hljs-attr">where</span>: {
+    <span class="hljs-attr">customer_id</span>: <span class="hljs-string">'1'</span>,
+  },
+});
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" name="destroybyid"></a><a href="#destroybyid" aria-hidden="true" class="hash-link" ><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>destroyById()</code></h3>
+<p><strong>static destroyById(recordId: string): Promise&lt;void&gt;</strong></p>
+<p>Delete a record in the database by id.</p>
+<p>Examples:</p>
+<pre><code class="hljs css javascript">$models.Contact.destroyById(<span class="hljs-string">'1'</span>);
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" name="findall"></a><a href="#findall" aria-hidden="true" class="hash-link" ><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>findAll()</code></h3>
+<p><strong>static findAll(options?: { where?: <a href="#OptionWhere">OptionWhere</a>, include?: <a href="#OptionInclude">OptionInclude</a>[], page?: <a href="#OptionPage">OptionPage</a> }): Promise&lt;<a href="#ObjectModel">ObjectModel</a>[]&gt;</strong></p>
+<p>Find records in the database matching the query.</p>
+<p>Examples:</p>
+<pre><code class="hljs css javascript"><span class="hljs-keyword">const</span> customers = <span class="hljs-keyword">await</span> $models.Customer.findAll({
+  <span class="hljs-attr">include</span>: [
+    { <span class="hljs-attr">as</span>: <span class="hljs-string">'contacts'</span> },
+  ],
+  <span class="hljs-attr">where</span>: {
+    <span class="hljs-attr">name</span>: <span class="hljs-string">'Coles'</span>,
+  },
+  <span class="hljs-attr">page</span>: {
+    <span class="hljs-attr">offset</span>: <span class="hljs-number">100</span>,
+    <span class="hljs-attr">limit</span>: <span class="hljs-number">50</span>,
+  },
+});
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" name="findandcountall"></a><a href="#findandcountall" aria-hidden="true" class="hash-link" ><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>findAndCountAll()</code></h3>
+<p><strong>static findAndCountAll(options?: { where?: <a href="#OptionWhere">OptionWhere</a>, include?: <a href="#OptionInclude">OptionInclude</a>[], page?: <a href="#OptionPage">OptionPage</a> }): Promise&lt;{ records: <a href="#ObjectModel">ObjectModel</a>[], total: number }&gt;</strong></p>
+<p>Find records in the database matching the query (with offset and limit applied)
+and get the total number of records matching the query.</p>
+<p>Examples:</p>
+<pre><code class="hljs css javascript"><span class="hljs-keyword">const</span> { records, total } = <span class="hljs-keyword">await</span> $models.Customer.findAndCountAll({
+  <span class="hljs-attr">include</span>: [
+    { <span class="hljs-attr">as</span>: <span class="hljs-string">'contacts'</span> },
+  ],
+  <span class="hljs-attr">where</span>: {
+    <span class="hljs-attr">name</span>: <span class="hljs-string">'Coles'</span>,
+  },
+  <span class="hljs-attr">page</span>: {
+    <span class="hljs-attr">offset</span>: <span class="hljs-number">100</span>,
+    <span class="hljs-attr">limit</span>: <span class="hljs-number">50</span>,
+  },
+});
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" name="findbyid"></a><a href="#findbyid" aria-hidden="true" class="hash-link" ><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>findById()</code></h3>
+<p><strong>static findById(id: string, options?: { include?: <a href="#OptionInclude">OptionInclude</a>[] }): Promise&lt;<a href="#ObjectModel">ObjectModel</a>&gt;</strong></p>
+<p>Find a record in the database by id.</p>
+<p>Examples:</p>
+<pre><code class="hljs css javascript"><span class="hljs-keyword">const</span> customer = <span class="hljs-keyword">await</span> $models.Customer.findById(<span class="hljs-string">'1'</span>, {
+  <span class="hljs-attr">include</span>: [
+    { <span class="hljs-attr">as</span>: <span class="hljs-string">'contacts'</span> },
+  ],
+});
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" name="findone"></a><a href="#findone" aria-hidden="true" class="hash-link" ><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>findOne()</code></h3>
+<p><strong>static findOne(options?: { where?: <a href="#OptionWhere">OptionWhere</a>, include?: <a href="#OptionInclude">OptionInclude</a>[] }): Promise&lt;<a href="#ObjectModel">ObjectModel</a>&gt;</strong></p>
+<p>Find a record in the database matching the query.</p>
+<p>Examples:</p>
+<pre><code class="hljs css javascript"><span class="hljs-keyword">const</span> customer = <span class="hljs-keyword">await</span> $models.Customer.findOne({
+  <span class="hljs-attr">include</span>: [
+    { <span class="hljs-attr">as</span>: <span class="hljs-string">'contacts'</span> },
+  ],
+  <span class="hljs-attr">where</span>: {
+    <span class="hljs-attr">name</span>: <span class="hljs-string">'Coles'</span>,
+  },
+});
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" name="update"></a><a href="#update" aria-hidden="true" class="hash-link" ><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>update()</code></h3>
+<p><strong>static update(values: <a href="#RecordObject">RecordObject</a>, options?: { where?: <a href="#OptionWhere">OptionWhere</a> }): Promise&lt;void&gt;</strong></p>
+<p>Update records in the database matching the query.</p>
+<p>Examples:</p>
+<pre><code class="hljs css javascript">$models.Contact.update(
+  { <span class="hljs-attr">name</span>: <span class="hljs-string">'Bob'</span> },
+  {
+    <span class="hljs-attr">where</span>: {
+      <span class="hljs-attr">name</span>: <span class="hljs-string">'Alice'</span>,
+    },
+  },
+);
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" name="types"></a><a href="#types" aria-hidden="true" class="hash-link" ><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Types</h2>
+<h3><a class="anchor" aria-hidden="true" name="recordobject-fieldname-string-any"></a><a href="#recordobject-fieldname-string-any" aria-hidden="true" class="hash-link" ><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>RecordObject: { [fieldName: string]: any }</h3>
+<p>A RecordObject is an object (key/value pairs) used to represent a full or
+partial record. Keys of a RecordObject are Field names of an Object, except for
+a Reference Field the key is the Field name + <code>_id</code>.</p>
+<p>Example:</p>
+<pre><code class="hljs css javascript"><span class="hljs-keyword">const</span> contactRecordObject = {
+  <span class="hljs-attr">name</span>: <span class="hljs-string">'Alice'</span>,
+  <span class="hljs-attr">customer_id</span>: <span class="hljs-string">'1'</span>,
+};
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" name="optioninclude-as-string-include-optioninclude-optioninclude-where-optionwhere-optionwhere"></a><a href="#optioninclude-as-string-include-optioninclude-optioninclude-where-optionwhere-optionwhere" aria-hidden="true" class="hash-link" ><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>OptionInclude: { as: string, include?: <a href="#OptionInclude">OptionInclude</a>[], where?: <a href="#OptionWhere">OptionWhere</a> }</h3>
+<p>The <code>include</code> option lets you specify relationships you want to include in the
+record.</p>
+<p><code>as</code> is the Relationship name. It is required.</p>
+<p>You can use nested <code>include</code> and <code>where</code> to include and filter nested
+relationships.</p>
+<p>Example:</p>
+<pre><code class="hljs css javascript"><span class="hljs-keyword">const</span> contactsFromColesNamedAlice = <span class="hljs-keyword">await</span> $models.Contact.findAll({
+  <span class="hljs-attr">where</span>: {
+    <span class="hljs-attr">name</span>: <span class="hljs-string">'Alice'</span>,
+  },
+  <span class="hljs-attr">include</span>: [
+    {
+      <span class="hljs-attr">as</span>: <span class="hljs-string">'customer'</span>,
+      <span class="hljs-attr">where</span>: {
+        <span class="hljs-attr">name</span>: <span class="hljs-string">'Coles'</span>,
+      },
+    },
+  ],
+});
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" name="optionwhere"></a><a href="#optionwhere" aria-hidden="true" class="hash-link" ><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>OptionWhere</h3>
+<p>The <code>where</code> option lets you filter a query.</p>
+<h4><a class="anchor" aria-hidden="true" name="basic"></a><a href="#basic" aria-hidden="true" class="hash-link" ><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Basic</h4>
+<pre><code class="hljs css javascript"><span class="hljs-comment">// Find all contacts of customer 1</span>
+$models.Contact.findAll({
+  <span class="hljs-attr">where</span>: {
+    <span class="hljs-attr">customer_id</span>: <span class="hljs-string">'1'</span>,
+  },
+});
+
+<span class="hljs-comment">// Find all contacts whose birthday is in July 1980</span>
+$models.Contact.findAll({
+  <span class="hljs-attr">where</span>: {
+    <span class="hljs-attr">birthday</span>: {
+      <span class="hljs-attr">$between</span>: [<span class="hljs-string">'1980-07-01'</span>, <span class="hljs-string">'1980-07-31'</span>],
+    },
+  },
+});
+</code></pre>
+<h4><a class="anchor" aria-hidden="true" name="operators"></a><a href="#operators" aria-hidden="true" class="hash-link" ><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Operators</h4>
+<table>
+<thead>
+<tr><th style="text-align:center">Operator</th><th style="text-align:center">Operands</th><th style="text-align:center">SQL</th></tr>
+</thead>
+<tbody>
+<tr><td style="text-align:center"><code>$and</code></td><td style="text-align:center">OptionWhere[]</td><td style="text-align:center">AND</td></tr>
+<tr><td style="text-align:center"><code>$or</code></td><td style="text-align:center">OptionWhere[]</td><td style="text-align:center">OR</td></tr>
+<tr><td style="text-align:center"><code>$gt</code></td><td style="text-align:center">string | number</td><td style="text-align:center">&gt;</td></tr>
+<tr><td style="text-align:center"><code>$gte</code></td><td style="text-align:center">string | number</td><td style="text-align:center">&gt;=</td></tr>
+<tr><td style="text-align:center"><code>$lt</code></td><td style="text-align:center">string | number</td><td style="text-align:center">&lt;</td></tr>
+<tr><td style="text-align:center"><code>$lte</code></td><td style="text-align:center">string | number</td><td style="text-align:center">&lt;=</td></tr>
+<tr><td style="text-align:center"><code>$ne</code></td><td style="text-align:center">string | number</td><td style="text-align:center">!=</td></tr>
+<tr><td style="text-align:center"><code>$eq</code></td><td style="text-align:center">string | number</td><td style="text-align:center">=</td></tr>
+<tr><td style="text-align:center"><code>$not</code></td><td style="text-align:center">boolean</td><td style="text-align:center">IS NOT TRUE</td></tr>
+<tr><td style="text-align:center"><code>$between</code></td><td style="text-align:center">[string | number, string | number]</td><td style="text-align:center">BETWEEN <em>a</em> AND <em>b</em></td></tr>
+<tr><td style="text-align:center"><code>$notBetween</code></td><td style="text-align:center">[string | number, string | number]</td><td style="text-align:center">NOT BETWEEN <em>a</em> AND <em>b</em></td></tr>
+<tr><td style="text-align:center"><code>$in</code></td><td style="text-align:center">string[] | number[]</td><td style="text-align:center">IN [<em>a</em>, <em>b</em>, ...]</td></tr>
+<tr><td style="text-align:center"><code>$notIn</code></td><td style="text-align:center">string[] | number[]</td><td style="text-align:center">NOT IN [<em>a</em>, <em>b</em>, ...]</td></tr>
+<tr><td style="text-align:center"><code>$iLike</code></td><td style="text-align:center">string</td><td style="text-align:center">ILIKE</td></tr>
+<tr><td style="text-align:center"><code>$notILike</code></td><td style="text-align:center">string</td><td style="text-align:center">NOT ILIKE</td></tr>
+</tbody>
+</table>
+<h4><a class="anchor" aria-hidden="true" name="combinations"></a><a href="#combinations" aria-hidden="true" class="hash-link" ><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Combinations</h4>
+<pre><code class="hljs css javascript">$models.Contact.findAll({
+  <span class="hljs-attr">where</span>: {
+    <span class="hljs-attr">$or</span>: [
+      {
+        <span class="hljs-attr">birthday</span>: {
+          <span class="hljs-attr">$between</span>: [<span class="hljs-string">'1980-07-01'</span>, <span class="hljs-string">'1980-07-31'</span>],
+        },
+      },
+      {
+        <span class="hljs-attr">$and</span>: [
+          {
+            <span class="hljs-attr">customer_id</span>: <span class="hljs-string">'1'</span>,
+          },
+          {
+            <span class="hljs-attr">name</span>: {
+              <span class="hljs-string">'iLike'</span>: <span class="hljs-string">'alice%'</span>,
+            },
+          },
+        ],
+      },
+    ],
+  },
+});
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" name="optionpage-offset-number-limit-number"></a><a href="#optionpage-offset-number-limit-number" aria-hidden="true" class="hash-link" ><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>OptionPage: { offset?: number, limit?: number }</h3>
+<p>The <code>page</code> option lets you do pagination.</p>
+<p>Example:</p>
+<pre><code class="hljs css javascript"><span class="hljs-comment">// get the 21st - 30th customers</span>
+<span class="hljs-keyword">const</span> tenCustomers = <span class="hljs-keyword">await</span> $models.Customer.findAll({
+  <span class="hljs-attr">page</span>: {
+    <span class="hljs-attr">offset</span>: <span class="hljs-number">20</span>,
+    <span class="hljs-attr">limit</span>: <span class="hljs-number">10</span>,
+  },
+});
+</code></pre>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-next button" href="custom-view-popup.html">$popup →</a></div></div></div></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/docusaurus.svg" alt="Bappo Developer" width="66" height="58"/></a><div><h5>Docs</h5><a href="/docs/en/getting-started.html">Getting Started</a><a href="/docs/en/doc2.html">Guides (or other categories)</a><a href="/docs/en/doc3.html">API Reference (or other categories)</a></div><div><h5>Community</h5><a href="/en/users.html">User Showcase</a><a href="http://stackoverflow.com/questions/tagged/" target="_blank">Stack Overflow</a><a href="https://discordapp.com/">Project Chat</a><a href="https://twitter.com/" target="_blank">Twitter</a></div><div><h5>More</h5><a href="/blog">Blog</a></div></section><a href="https://code.facebook.com/projects/" target="_blank" class="fbOpenSource"><img src="/img/oss_logo.png" alt="Facebook Open Source" width="170" height="45"/></a><section class="copyright">Copyright © 2018 Bappo</section></footer></div></body></html>
