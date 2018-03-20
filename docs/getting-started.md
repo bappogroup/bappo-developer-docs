@@ -8,7 +8,7 @@ functionality on Bappo.
 
 ## Create an account
 
-Go to [Bappo](go.bappo.com) and sign up. Once you've registered and verified
+Go to https://go.bappo.com and sign up. Once you've registered and verified
 your email, log in and you will see the screen below:
 
 ![Signed up](assets/screenshots/getting-started/1-signed-up.png)
