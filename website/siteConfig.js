@@ -30,14 +30,17 @@ const siteConfig = {
   ],
   users,
   /* path to images for header/footer */
-  headerIcon: 'img/docusaurus.svg',
+  headerIcon: 'img/bappo_on_white.png',
   footerIcon: 'img/docusaurus.svg',
   favicon: 'img/favicon.png',
   /* colors for website */
   colors: {
-    primaryColor: '#FF7F09',
-    secondaryColor: '#008FB2',
+    primaryColor: '#ddd',
+    secondaryColor: '#888',
   },
+  /*  primaryColor: '#FF7F09',
+      secondaryColor: '#0088BB',  */
+  
   /* custom fonts for website */
   /*fonts: {
     myFont: [
