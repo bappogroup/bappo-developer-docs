@@ -9,7 +9,9 @@
 <url> <loc>https://bappo.com/blog/2017/04/10/blog-post-two.html</loc> <changefreq>weekly</changefreq> <priority>0.3</priority> </url>
 <url> <loc>https://bappo.com/blog/2016/03/11/blog-post.html</loc> <changefreq>weekly</changefreq> <priority>0.3</priority> </url>
 <url> <loc>https://bappo.com/docs/create-custom-view.html</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="https://bappo.com/docs/create-custom-view.html" /> </url>
+<url> <loc>https://bappo.com/docs/custom-view-global.html</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="https://bappo.com/docs/custom-view-global.html" /> </url>
 <url> <loc>https://bappo.com/docs/custom-view-models.html</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="https://bappo.com/docs/custom-view-models.html" /> </url>
+<url> <loc>https://bappo.com/docs/custom-view-navigation.html</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="https://bappo.com/docs/custom-view-navigation.html" /> </url>
 <url> <loc>https://bappo.com/docs/custom-view-popup.html</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="https://bappo.com/docs/custom-view-popup.html" /> </url>
 <url> <loc>https://bappo.com/docs/getting-started.html</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="https://bappo.com/docs/getting-started.html" /> </url>
 </urlset>
