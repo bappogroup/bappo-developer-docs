@@ -14,5 +14,4 @@
 <url> <loc>https://bappo.com/docs/custom-view-navigation.html</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="https://bappo.com/docs/custom-view-navigation.html" /> </url>
 <url> <loc>https://bappo.com/docs/custom-view-popup.html</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="https://bappo.com/docs/custom-view-popup.html" /> </url>
 <url> <loc>https://bappo.com/docs/getting-started.html</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="https://bappo.com/docs/getting-started.html" /> </url>
-<url> <loc>https://bappo.com/docs/test.html</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="https://bappo.com/docs/test.html" /> </url>
 </urlset>
