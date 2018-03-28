@@ -196,6 +196,10 @@ $models.Contact.update(
 );
 ```
 
+### `fields`
+
+Return all the fields of the object definition.
+
 ## Types
 
 ### RecordObject: { [fieldName: string]: any }

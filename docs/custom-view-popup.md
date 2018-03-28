@@ -83,6 +83,28 @@ $popup.form({
 });
 ```
 
+### `open()`
+
+**static form(component, options: [PageOptions](#PageOptions))**
+
+Opens any react component in a popup.
+
+Example:
+
+```javascript
+$popup.open(
+  <div>hello</div>,
+  {
+    style: {
+      // Both infinity to full screen
+      width: Infinity,
+      height: Infinity,
+    },
+    title: "Hello"
+  }
+);
+```
+
 ## Types
 
 ### CommonFormOptions
@@ -121,3 +143,10 @@ All properties in [CommonFormOptions](#CommonFormOptions) plus the table below:
 | path       | string                              | Database Field | Yes                     | DB Field name |
 | type       | [FieldType](#FieldType)             | Generic Field  | Yes                     | Field type |
 | properties | [FieldProperties](#FieldProperties) | Generic Field  | Yes                     | Field properties |
+
+### PageOptions
+
+| Property      | Type                  | Required | Description |
+| :-----------: | :-------------------: | :------: | ----------- |
+| style         | object                | No       | Controls width and height of the popup. Values are numbers in pixel, or 'Infinity' to make the popup fullscreen. |
+| title         | string                | No       | Popup title |
