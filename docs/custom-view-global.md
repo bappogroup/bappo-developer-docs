@@ -20,5 +20,4 @@ custom view. It can be used to get global data, e.g. current user.
 
 An object containing current user information. Fields include: `activeStatus, email, firstName, lastName, id, userId, name` etc.
 
-Note `id` is related to `User` object of the app, whereas userId is globally unique user id.
-
+Note `id` is for the `User` object of the app, whereas userId is the globally unique user id.
