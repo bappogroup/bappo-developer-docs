@@ -67,7 +67,8 @@ $popup.form({
     {
       name: 'favouriteFruit', // field name, required for generic input
       type: 'FixedList', // field type, required
-      properties: { // field properties, required
+      properties: {
+        // field properties, required
         options: [
           { id: '1', label: 'Apple' },
           { id: '2', label: 'Banana' },
@@ -92,61 +93,58 @@ Opens any react component in a popup.
 Example:
 
 ```javascript
-$popup.open(
-  <div>hello</div>,
-  {
-    style: {
-      // Both infinity to full screen
-      width: Infinity,
-      height: Infinity,
-    },
-    title: "Hello"
-  }
-);
+$popup.open(<div>hello</div>, {
+  style: {
+    // Both infinity to full screen
+    width: Infinity,
+    height: Infinity,
+  },
+  title: 'Hello',
+});
 ```
 
 ## Types
 
 ### CommonFormOptions
 
-| Property      | Type                                                             | Required | Description |
-| :-----------: | :--------------------------------------------------------------: | :------: | ----------- |
-| initialValues | [RecordObject](custom-view-models#RecordObject)                  | No       | Field initial values when form is opened |
-| onSumbit      | (values: [RecordObject](custom-view-models#RecordObject)) => any | No       | Callback function that is called when form is submitted |
-| title         | string                                                           | No       | Form title |
+|   Property    |                               Type                               | Required | Description                                             |
+| :-----------: | :--------------------------------------------------------------: | :------: | ------------------------------------------------------- |
+| initialValues |         [RecordObject](custom-view-models#RecordObject)          |    No    | Field initial values when form is opened                |
+|   onSumbit    | (values: [RecordObject](custom-view-models#RecordObject)) => any |   Yes    | Callback function that is called when form is submitted |
+|     title     |                              string                              |    No    | Form title                                              |
 
 ### UserDefinedFormOptions
 
 All properties in [CommonFormOptions](#CommonFormOptions) plus the table below:
 
-| Property | Type   | Required | Description |
+| Property |  Type  | Required | Description |
 | :------: | :----: | :------: | ----------- |
-| formKey  | string | Yes      | Form key    |
+| formKey  | string |   Yes    | Form key    |
 
 ### CustomFormOptions
 
 All properties in [CommonFormOptions](#CommonFormOptions) plus the table below:
 
-| Property  | Type                                  | Required | Description              |
+| Property  |                 Type                  | Required | Description              |
 | :-------: | :-----------------------------------: | :------: | ------------------------ |
-| fields    | [FormFieldConfig](#FormFieldConfig)[] | Yes      | Field configurations     |
-| objectKey | string                                | No       | Object key of all fields |
+|  fields   | [FormFieldConfig](#FormFieldConfig)[] |   Yes    | Field configurations     |
+| objectKey |                string                 |    No    | Object key of all fields |
 
 ### FormFieldConfig
 
-| Property   | Type                                | Field Type     | Required                | Description |
-| :--------: | :---------------------------------: | :------------: | :---------------------: | ----------- |
-| name       | string                              | Any            | If a generic field | Name that appears in the object passed to `onSubmit` |
-| label      | string                              | Any            | No                      | Field label |
-| readOnly   | boolean                             | Any            | No                      | Field is read-only |
-| validate   | value => ?string                    | Any            | No                      | Validation function. Return an error message string or `undefined` if validation passes |
-| path       | string                              | Database Field | Yes                     | DB Field name |
-| type       | [FieldType](#FieldType)             | Generic Field  | Yes                     | Field type |
-| properties | [FieldProperties](#FieldProperties) | Generic Field  | Yes                     | Field properties |
+|  Property  |                Type                 |   Field Type   |      Required      | Description                                                                             |
+| :--------: | :---------------------------------: | :------------: | :----------------: | --------------------------------------------------------------------------------------- |
+|    name    |               string                |      Any       | If a generic field | Name that appears in the object passed to `onSubmit`                                    |
+|   label    |               string                |      Any       |         No         | Field label                                                                             |
+|  readOnly  |               boolean               |      Any       |         No         | Field is read-only                                                                      |
+|  validate  |          value => ?string           |      Any       |         No         | Validation function. Return an error message string or `undefined` if validation passes |
+|    path    |               string                | Database Field |        Yes         | DB Field name                                                                           |
+|    type    |       [FieldType](#FieldType)       | Generic Field  |        Yes         | Field type                                                                              |
+| properties | [FieldProperties](#FieldProperties) | Generic Field  |        Yes         | Field properties                                                                        |
 
 ### PageOptions
 
-| Property      | Type                  | Required | Description |
-| :-----------: | :-------------------: | :------: | ----------- |
-| style         | object                | No       | Controls width and height of the popup. Values are numbers in pixel, or 'Infinity' to make the popup fullscreen. |
-| title         | string                | No       | Popup title |
+| Property |  Type  | Required | Description                                                                                                      |
+| :------: | :----: | :------: | ---------------------------------------------------------------------------------------------------------------- |
+|  style   | object |    No    | Controls width and height of the popup. Values are numbers in pixel, or 'Infinity' to make the popup fullscreen. |
+|  title   | string |    No    | Popup title                                                                                                      |
