@@ -97,7 +97,7 @@ $models.Contact.destroyById("1");
 
 ### `findAll()`
 
-**static findAll(options?: { where?: [OptionWhere](#OptionWhere), include?: [OptionInclude](#OptionInclude)[], page?: [OptionPage](#OptionPage) }): Promise<[ObjectModel](#ObjectModel)[]>**
+**static findAll(options?: { attributes?: OptionAttribute, where?: [OptionWhere](#OptionWhere), include?: [OptionInclude](#OptionInclude)[], page?: [OptionPage](#OptionPage) }): Promise<[ObjectModel](#ObjectModel)[]>**
 
 Find records in the database matching the query.
 
@@ -116,7 +116,7 @@ const customers = await $models.Customer.findAll({
 
 ### `findAndCountAll()`
 
-**static findAndCountAll(options?: { where?: [OptionWhere](#OptionWhere), include?: [OptionInclude](#OptionInclude)[], page?: [OptionPage](#OptionPage) }): Promise<{ records: [ObjectModel](#ObjectModel)[], total: number }>**
+**static findAndCountAll(options?: { attributes?: OptionAttribute, where?: [OptionWhere](#OptionWhere), include?: [OptionInclude](#OptionInclude)[], page?: [OptionPage](#OptionPage) }): Promise<{ records: [ObjectModel](#ObjectModel)[], total: number }>**
 
 Find records in the database matching the query (with offset and limit applied)
 and get the total number of records matching the query.
@@ -136,7 +136,7 @@ const { records, total } = await $models.Customer.findAndCountAll({
 
 ### `findById()`
 
-**static findById(id: string, options?: { include?: [OptionInclude](#OptionInclude)[] }): Promise<[ObjectModel](#ObjectModel)>**
+**static findById(id: string, options?: { attributes?: OptionAttribute, include?: [OptionInclude](#OptionInclude)[] }): Promise<[ObjectModel](#ObjectModel)>**
 
 Find a record in the database by id.
 
@@ -150,7 +150,7 @@ const customer = await $models.Customer.findById("1", {
 
 ### `findOne()`
 
-**static findOne(options?: { where?: [OptionWhere](#OptionWhere), include?: [OptionInclude](#OptionInclude)[] }): Promise<[ObjectModel](#ObjectModel)>**
+**static findOne(options?: { attributes?: OptionAttribute, where?: [OptionWhere](#OptionWhere), include?: [OptionInclude](#OptionInclude)[] }): Promise<[ObjectModel](#ObjectModel)>**
 
 Find a record in the database matching the query.
 
@@ -204,6 +204,10 @@ const contactRecordObject = {
   customer_id: "1"
 };
 ```
+
+### OptionAttribute: string[]
+
+The `attributes` option lets you specify fields you want to include in the record. `id` will always be included.
 
 ### OptionInclude: { as: string, include?: [OptionInclude](#OptionInclude)[], where?: [OptionWhere](#OptionWhere) }
 
