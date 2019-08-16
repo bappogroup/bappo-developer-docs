@@ -184,7 +184,7 @@ $models.Contact.update(
 );
 ```
 
-### `fields`
+### `fields` (⚠️ This feature is experimental and will change in the future)
 
 Return all the fields of the object definition.
 
