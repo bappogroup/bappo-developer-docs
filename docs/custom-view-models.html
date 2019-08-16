@@ -144,8 +144,10 @@ a Reference Field the key is the Field name + <code>_id</code>.</p>
   <span class="hljs-attr">customer_id</span>: <span class="hljs-string">"1"</span>
 };
 </code></pre>
+<p><a class="anchor" aira-hidden="true" name="optionattribute"></a></p>
 <h3><a class="anchor" aria-hidden="true" name="optionattribute-string"></a><a href="#optionattribute-string" aria-hidden="true" class="hash-link" ><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>OptionAttribute: string[]</h3>
 <p>The <code>attributes</code> option lets you specify fields you want to include in the record. <code>id</code> will always be included.</p>
+<p><a class="anchor" aira-hidden="true" name="optioninclude"></a></p>
 <h3><a class="anchor" aria-hidden="true" name="optioninclude-as-string-include-optioninclude-optioninclude-where-optionwhere-optionwhere"></a><a href="#optioninclude-as-string-include-optioninclude-optioninclude-where-optionwhere-optionwhere" aria-hidden="true" class="hash-link" ><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>OptionInclude: { as: string, include?: <a href="#OptionInclude">OptionInclude</a>[], where?: <a href="#OptionWhere">OptionWhere</a> }</h3>
 <p>The <code>include</code> option lets you specify relationships you want to include in the
 record.</p>
@@ -167,6 +169,7 @@ relationships.</p>
   ]
 });
 </code></pre>
+<p><a class="anchor" aira-hidden="true" name="optionwhere"></a></p>
 <h3><a class="anchor" aria-hidden="true" name="optionwhere"></a><a href="#optionwhere" aria-hidden="true" class="hash-link" ><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>OptionWhere</h3>
 <p>The <code>where</code> option lets you filter a query.</p>
 <h4><a class="anchor" aria-hidden="true" name="basic"></a><a href="#basic" aria-hidden="true" class="hash-link" ><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Basic</h4>
@@ -234,8 +237,8 @@ $models.Contact.findAll({
   }
 });
 </code></pre>
-<h3><a class="anchor" aria-hidden="true" name="pagination-limiting-offset-number-limit-number"></a><a href="#pagination-limiting-offset-number-limit-number" aria-hidden="true" class="hash-link" ><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Pagination/Limiting offset?: number, limit?: number</h3>
-<p>The <code>page</code> option lets you do pagination.</p>
+<h4><a class="anchor" aria-hidden="true" name="pagination-limiting"></a><a href="#pagination-limiting" aria-hidden="true" class="hash-link" ><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Pagination/Limiting</h4>
+<p>The <code>offset</code> and <code>limit</code> options let you do pagination.</p>
 <p>Example:</p>
 <pre><code class="hljs css javascript"><span class="hljs-comment">// get the 21st - 30th customers</span>
 <span class="hljs-keyword">const</span> tenCustomers = <span class="hljs-keyword">await</span> $models.Customer.findAll({
