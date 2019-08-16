@@ -205,9 +205,13 @@ const contactRecordObject = {
 };
 ```
 
+<a class="anchor" aira-hidden="true" name="optionattribute"></a>
+
 ### OptionAttribute: string[]
 
 The `attributes` option lets you specify fields you want to include in the record. `id` will always be included.
+
+<a class="anchor" aira-hidden="true" name="optioninclude"></a>
 
 ### OptionInclude: { as: string, include?: [OptionInclude](#OptionInclude)[], where?: [OptionWhere](#OptionWhere) }
 
@@ -236,6 +240,8 @@ const contactsFromColesNamedAlice = await $models.Contact.findAll({
   ]
 });
 ```
+
+<a class="anchor" aira-hidden="true" name="optionwhere"></a>
 
 ### OptionWhere
 
@@ -276,8 +282,8 @@ $models.Contact.findAll({
 |    `$not`     |                   boolean                    |       IS NOT TRUE       |
 |  `$between`   | [string &#124; number, string &#124; number] |   BETWEEN _a_ AND _b_   |
 | `$notBetween` | [string &#124; number, string &#124; number] | NOT BETWEEN _a_ AND _b_ |
-|     `$in`     |           string[] &#124; number[]           |   IN [*a*, *b*, ...]    |
-|   `$notIn`    |           string[] &#124; number[]           | NOT IN [*a*, *b*, ...]  |
+|     `$in`     |           string[] &#124; number[]           |   IN [_a_, _b_, ...]    |
+|   `$notIn`    |           string[] &#124; number[]           | NOT IN [_a_, _b_, ...]  |
 |   `$iLike`    |                    string                    |          ILIKE          |
 |  `$notILike`  |                    string                    |        NOT ILIKE        |
 
@@ -309,9 +315,9 @@ $models.Contact.findAll({
 });
 ```
 
-### Pagination/Limiting offset?: number, limit?: number
+#### Pagination/Limiting
 
-The `page` option lets you do pagination.
+The `offset` and `limit` options let you do pagination.
 
 Example:
 
