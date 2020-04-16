@@ -33,7 +33,7 @@ being an <a href="#ObjectModel">Object Model</a>.</p>
 <pre><code class="hljs css javascript"><span class="hljs-keyword">const</span> newContacts = <span class="hljs-keyword">await</span> $models.Contact.bulkCreate([
   { <span class="hljs-attr">name</span>: <span class="hljs-string">"Alice"</span>, <span class="hljs-attr">email</span>: <span class="hljs-string">"a@bappo.com"</span>, <span class="hljs-attr">customer_id</span>: <span class="hljs-string">"1"</span> },
   { <span class="hljs-attr">name</span>: <span class="hljs-string">"Bob"</span>, <span class="hljs-attr">email</span>: <span class="hljs-string">"b@bappo.com"</span>, <span class="hljs-attr">customer_id</span>: <span class="hljs-string">"1"</span> },
-  { <span class="hljs-attr">name</span>: <span class="hljs-string">"Charles"</span>, <span class="hljs-attr">email</span>: <span class="hljs-string">"c@bappo.com"</span>, <span class="hljs-attr">customer_id</span>: <span class="hljs-string">"2"</span> }
+  { <span class="hljs-attr">name</span>: <span class="hljs-string">"Charles"</span>, <span class="hljs-attr">email</span>: <span class="hljs-string">"c@bappo.com"</span>, <span class="hljs-attr">customer_id</span>: <span class="hljs-string">"2"</span> },
 ]);
 </code></pre>
 <h3><a class="anchor" aria-hidden="true" name="bulkupdate"></a><a href="#bulkupdate" aria-hidden="true" class="hash-link" ><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>bulkUpdate()</code></h3>
@@ -43,7 +43,7 @@ being an <a href="#ObjectModel">Object Model</a>.</p>
 <p>Examples:</p>
 <pre><code class="hljs css javascript">$models.Contact.bulkUpdate([
   { <span class="hljs-attr">id</span>: <span class="hljs-string">"1"</span>, <span class="hljs-attr">name</span>: <span class="hljs-string">"a.new@bappo.com"</span> },
-  { <span class="hljs-attr">id</span>: <span class="hljs-string">"2"</span>, <span class="hljs-attr">customer_id</span>: <span class="hljs-string">"2"</span> }
+  { <span class="hljs-attr">id</span>: <span class="hljs-string">"2"</span>, <span class="hljs-attr">customer_id</span>: <span class="hljs-string">"2"</span> },
 ]);
 </code></pre>
 <h3><a class="anchor" aria-hidden="true" name="create"></a><a href="#create" aria-hidden="true" class="hash-link" ><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>create()</code></h3>
@@ -53,7 +53,7 @@ being an <a href="#ObjectModel">Object Model</a>.</p>
 <pre><code class="hljs css javascript"><span class="hljs-keyword">const</span> newContact = <span class="hljs-keyword">await</span> $models.Contact.create({
   <span class="hljs-attr">name</span>: <span class="hljs-string">"Alice"</span>,
   <span class="hljs-attr">email</span>: <span class="hljs-string">"a@bappo.com"</span>,
-  <span class="hljs-attr">customer_id</span>: <span class="hljs-string">"1"</span>
+  <span class="hljs-attr">customer_id</span>: <span class="hljs-string">"1"</span>,
 });
 </code></pre>
 <h3><a class="anchor" aria-hidden="true" name="destroy"></a><a href="#destroy" aria-hidden="true" class="hash-link" ><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>destroy()</code></h3>
@@ -62,8 +62,8 @@ being an <a href="#ObjectModel">Object Model</a>.</p>
 <p>Examples:</p>
 <pre><code class="hljs css javascript">$models.Contact.destroy({
   <span class="hljs-attr">where</span>: {
-    <span class="hljs-attr">customer_id</span>: <span class="hljs-string">"1"</span>
-  }
+    <span class="hljs-attr">customer_id</span>: <span class="hljs-string">"1"</span>,
+  },
 });
 </code></pre>
 <h3><a class="anchor" aria-hidden="true" name="destroybyid"></a><a href="#destroybyid" aria-hidden="true" class="hash-link" ><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>destroyById()</code></h3>
@@ -73,7 +73,7 @@ being an <a href="#ObjectModel">Object Model</a>.</p>
 <pre><code class="hljs css javascript">$models.Contact.destroyById(<span class="hljs-string">"1"</span>);
 </code></pre>
 <h3><a class="anchor" aria-hidden="true" name="findall"></a><a href="#findall" aria-hidden="true" class="hash-link" ><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>findAll()</code></h3>
-<p><strong>static findAll(options?: { attributes?: <a href="#OptionAttribute">OptionAttribute</a>, where?: <a href="#OptionWhere">OptionWhere</a>, include?: <a href="#OptionInclude">OptionInclude</a>[], page?: <a href="#OptionPage">OptionPage</a> }): Promise&lt;<a href="#ObjectModel">ObjectModel</a>[]&gt;</strong></p>
+<p><strong>static findAll(options?: { attributes?: <a href="#OptionAttribute">OptionAttribute</a>, where?: <a href="#OptionWhere">OptionWhere</a>, include?: <a href="#OptionInclude">OptionInclude</a>[], page?: <a href="#OptionPage">OptionPage</a>, order?: <a href="#OptionOrder">OptionOrder</a> }): Promise&lt;<a href="#ObjectModel">ObjectModel</a>[]&gt;</strong></p>
 <p>Find records in the database matching the query.</p>
 <p>Examples:</p>
 <pre><code class="hljs css javascript"><span class="hljs-keyword">const</span> customers = <span class="hljs-keyword">await</span> $models.Customer.findAll({
@@ -83,20 +83,22 @@ being an <a href="#ObjectModel">Object Model</a>.</p>
   },
   <span class="hljs-attr">offset</span>: <span class="hljs-number">100</span>,
   <span class="hljs-attr">limit</span>: <span class="hljs-number">50</span>
+  order:[[<span class="hljs-string">'age'</span>,<span class="hljs-string">'ASC'</span>]]
 });
 </code></pre>
 <h3><a class="anchor" aria-hidden="true" name="findandcountall"></a><a href="#findandcountall" aria-hidden="true" class="hash-link" ><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>findAndCountAll()</code></h3>
-<p><strong>static findAndCountAll(options?: { attributes?: <a href="#OptionAttribute">OptionAttribute</a>, where?: <a href="#OptionWhere">OptionWhere</a>, include?: <a href="#OptionInclude">OptionInclude</a>[], page?: <a href="#OptionPage">OptionPage</a> }): Promise&lt;{ records: <a href="#ObjectModel">ObjectModel</a>[], total: number }&gt;</strong></p>
+<p><strong>static findAndCountAll(options?: { attributes?: <a href="#OptionAttribute">OptionAttribute</a>, where?: <a href="#OptionWhere">OptionWhere</a>, include?: <a href="#OptionInclude">OptionInclude</a>[], page?: <a href="#OptionPage">OptionPage</a>, order?: <a href="#OptionOrder">OptionOrder</a> }): Promise&lt;{ records: <a href="#ObjectModel">ObjectModel</a>[], total: number }&gt;</strong></p>
 <p>Find records in the database matching the query (with offset and limit applied)
 and get the total number of records matching the query.</p>
 <p>Examples:</p>
 <pre><code class="hljs css javascript"><span class="hljs-keyword">const</span> { records, total } = <span class="hljs-keyword">await</span> $models.Customer.findAndCountAll({
   <span class="hljs-attr">include</span>: [{ <span class="hljs-attr">as</span>: <span class="hljs-string">"contacts"</span> }],
   <span class="hljs-attr">where</span>: {
-    <span class="hljs-attr">name</span>: <span class="hljs-string">"Coles"</span>
+    <span class="hljs-attr">name</span>: <span class="hljs-string">"Coles"</span>,
   },
   <span class="hljs-attr">offset</span>: <span class="hljs-number">100</span>,
-  <span class="hljs-attr">limit</span>: <span class="hljs-number">50</span>
+  <span class="hljs-attr">limit</span>: <span class="hljs-number">50</span>,
+  <span class="hljs-attr">order</span>:[[<span class="hljs-string">'age'</span>,<span class="hljs-string">'ASC'</span>]]
 });
 </code></pre>
 <h3><a class="anchor" aria-hidden="true" name="findbyid"></a><a href="#findbyid" aria-hidden="true" class="hash-link" ><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>findById()</code></h3>
@@ -104,7 +106,7 @@ and get the total number of records matching the query.</p>
 <p>Find a record in the database by id.</p>
 <p>Examples:</p>
 <pre><code class="hljs css javascript"><span class="hljs-keyword">const</span> customer = <span class="hljs-keyword">await</span> $models.Customer.findById(<span class="hljs-string">"1"</span>, {
-  <span class="hljs-attr">include</span>: [{ <span class="hljs-attr">as</span>: <span class="hljs-string">"contacts"</span> }]
+  <span class="hljs-attr">include</span>: [{ <span class="hljs-attr">as</span>: <span class="hljs-string">"contacts"</span> }],
 });
 </code></pre>
 <h3><a class="anchor" aria-hidden="true" name="findone"></a><a href="#findone" aria-hidden="true" class="hash-link" ><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>findOne()</code></h3>
@@ -114,8 +116,8 @@ and get the total number of records matching the query.</p>
 <pre><code class="hljs css javascript"><span class="hljs-keyword">const</span> customer = <span class="hljs-keyword">await</span> $models.Customer.findOne({
   <span class="hljs-attr">include</span>: [{ <span class="hljs-attr">as</span>: <span class="hljs-string">"contacts"</span> }],
   <span class="hljs-attr">where</span>: {
-    <span class="hljs-attr">name</span>: <span class="hljs-string">"Coles"</span>
-  }
+    <span class="hljs-attr">name</span>: <span class="hljs-string">"Coles"</span>,
+  },
 });
 </code></pre>
 <h3><a class="anchor" aria-hidden="true" name="update"></a><a href="#update" aria-hidden="true" class="hash-link" ><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>update()</code></h3>
@@ -126,8 +128,8 @@ and get the total number of records matching the query.</p>
   { <span class="hljs-attr">name</span>: <span class="hljs-string">"Bob"</span> },
   {
     <span class="hljs-attr">where</span>: {
-      <span class="hljs-attr">name</span>: <span class="hljs-string">"Alice"</span>
-    }
+      <span class="hljs-attr">name</span>: <span class="hljs-string">"Alice"</span>,
+    },
   }
 );
 </code></pre>
@@ -141,7 +143,7 @@ a Reference Field the key is the Field name + <code>_id</code>.</p>
 <p>Example:</p>
 <pre><code class="hljs css javascript"><span class="hljs-keyword">const</span> contactRecordObject = {
   <span class="hljs-attr">name</span>: <span class="hljs-string">"Alice"</span>,
-  <span class="hljs-attr">customer_id</span>: <span class="hljs-string">"1"</span>
+  <span class="hljs-attr">customer_id</span>: <span class="hljs-string">"1"</span>,
 };
 </code></pre>
 <p><a class="anchor" aira-hidden="true" name="optionattribute"></a></p>
@@ -157,16 +159,16 @@ relationships.</p>
 <p>Example:</p>
 <pre><code class="hljs css javascript"><span class="hljs-keyword">const</span> contactsFromColesNamedAlice = <span class="hljs-keyword">await</span> $models.Contact.findAll({
   <span class="hljs-attr">where</span>: {
-    <span class="hljs-attr">name</span>: <span class="hljs-string">"Alice"</span>
+    <span class="hljs-attr">name</span>: <span class="hljs-string">"Alice"</span>,
   },
   <span class="hljs-attr">include</span>: [
     {
       <span class="hljs-attr">as</span>: <span class="hljs-string">"customer"</span>,
       <span class="hljs-attr">where</span>: {
-        <span class="hljs-attr">name</span>: <span class="hljs-string">"Coles"</span>
-      }
-    }
-  ]
+        <span class="hljs-attr">name</span>: <span class="hljs-string">"Coles"</span>,
+      },
+    },
+  ],
 });
 </code></pre>
 <p><a class="anchor" aira-hidden="true" name="optionwhere"></a></p>
@@ -176,17 +178,17 @@ relationships.</p>
 <pre><code class="hljs css javascript"><span class="hljs-comment">// Find all contacts of customer 1</span>
 $models.Contact.findAll({
   <span class="hljs-attr">where</span>: {
-    <span class="hljs-attr">customer_id</span>: <span class="hljs-string">"1"</span>
-  }
+    <span class="hljs-attr">customer_id</span>: <span class="hljs-string">"1"</span>,
+  },
 });
 
 <span class="hljs-comment">// Find all contacts whose birthday is in July 1980</span>
 $models.Contact.findAll({
   <span class="hljs-attr">where</span>: {
     <span class="hljs-attr">birthday</span>: {
-      <span class="hljs-attr">$between</span>: [<span class="hljs-string">"1980-07-01"</span>, <span class="hljs-string">"1980-07-31"</span>]
-    }
-  }
+      <span class="hljs-attr">$between</span>: [<span class="hljs-string">"1980-07-01"</span>, <span class="hljs-string">"1980-07-31"</span>],
+    },
+  },
 });
 </code></pre>
 <h4><a class="anchor" aria-hidden="true" name="operators"></a><a href="#operators" aria-hidden="true" class="hash-link" ><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Operators</h4>
@@ -218,23 +220,23 @@ $models.Contact.findAll({
     <span class="hljs-attr">$or</span>: [
       {
         <span class="hljs-attr">birthday</span>: {
-          <span class="hljs-attr">$between</span>: [<span class="hljs-string">"1980-07-01"</span>, <span class="hljs-string">"1980-07-31"</span>]
-        }
+          <span class="hljs-attr">$between</span>: [<span class="hljs-string">"1980-07-01"</span>, <span class="hljs-string">"1980-07-31"</span>],
+        },
       },
       {
         <span class="hljs-attr">$and</span>: [
           {
-            <span class="hljs-attr">customer_id</span>: <span class="hljs-string">"1"</span>
+            <span class="hljs-attr">customer_id</span>: <span class="hljs-string">"1"</span>,
           },
           {
             <span class="hljs-attr">name</span>: {
-              <span class="hljs-attr">iLike</span>: <span class="hljs-string">"alice%"</span>
-            }
-          }
-        ]
-      }
-    ]
-  }
+              <span class="hljs-attr">iLike</span>: <span class="hljs-string">"alice%"</span>,
+            },
+          },
+        ],
+      },
+    ],
+  },
 });
 </code></pre>
 <h4><a class="anchor" aria-hidden="true" name="pagination-limiting"></a><a href="#pagination-limiting" aria-hidden="true" class="hash-link" ><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Pagination/Limiting</h4>
@@ -243,7 +245,15 @@ $models.Contact.findAll({
 <pre><code class="hljs css javascript"><span class="hljs-comment">// get the 21st - 30th customers</span>
 <span class="hljs-keyword">const</span> tenCustomers = <span class="hljs-keyword">await</span> $models.Customer.findAll({
   <span class="hljs-attr">offset</span>: <span class="hljs-number">20</span>,
-  <span class="hljs-attr">limit</span>: <span class="hljs-number">10</span>
+  <span class="hljs-attr">limit</span>: <span class="hljs-number">10</span>,
 });
 </code></pre>
-</span></div></article></div><div class="docs-prevnext"><a class="docs-next button" href="custom-view-popup.html">$popup →</a></div></div></div></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/bappo-developer-docs/" class="nav-home"><img src="/bappo-developer-docs/img/favicon.png" alt="Bappo Developer" width="66" height="58"/></a><div><h5>Docs</h5><a href="/bappo-developer-docs/docs/en/getting-started.html">Getting Started</a><a href="/bappo-developer-docs/docs/en/doc2.html">Guides (or other categories)</a><a href="/bappo-developer-docs/docs/en/doc3.html">API Reference (or other categories)</a></div><div><h5>Community</h5><a href="/bappo-developer-docs/en/users.html">User Showcase</a><a href="http://stackoverflow.com/questions/tagged/" target="_blank">Stack Overflow</a><a href="https://discordapp.com/">Project Chat</a><a href="https://twitter.com/" target="_blank">Twitter</a></div><div><h5>More</h5><a href="/bappo-developer-docs/blog">Blog</a></div></section><a href="https://code.facebook.com/projects/" target="_blank" class="fbOpenSource"><img src="/bappo-developer-docs/img/oss_logo.png" alt="Facebook Open Source" width="170" height="45"/></a><section class="copyright">Copyright © 2019 Bappo</section></footer></div></body></html>
+<h3><a class="anchor" aria-hidden="true" name="optionorder-array"></a><a href="#optionorder-array" aria-hidden="true" class="hash-link" ><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>OptionOrder: array[]</h3>
+<p>The <code>order</code> option takes an array of items to order the query. These items are themselves in the form [column, direction]. The column will be escaped correctly and the direction will be checked in a whitelist of valid directions (such as ASC, DESC, NULLS FIRST).</p>
+<p>Example:</p>
+<pre><code class="hljs css javascript"><span class="hljs-comment">// find all customers sorted by name ascending first, then ordered by their age descending if share the same name.</span>
+<span class="hljs-keyword">const</span> tenCustomers = <span class="hljs-keyword">await</span> $models.Customer.findAll({
+  <span class="hljs-attr">order</span>: [[name, <span class="hljs-string">'ASC'</span>], [age, <span class="hljs-string">'DESC'</span>]]
+});
+</code></pre>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-next button" href="custom-view-popup.html">$popup →</a></div></div></div></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/bappo-developer-docs/" class="nav-home"><img src="/bappo-developer-docs/img/favicon.png" alt="Bappo Developer" width="66" height="58"/></a><div><h5>Docs</h5><a href="/bappo-developer-docs/docs/en/getting-started.html">Getting Started</a><a href="/bappo-developer-docs/docs/en/doc2.html">Guides (or other categories)</a><a href="/bappo-developer-docs/docs/en/doc3.html">API Reference (or other categories)</a></div><div><h5>Community</h5><a href="/bappo-developer-docs/en/users.html">User Showcase</a><a href="http://stackoverflow.com/questions/tagged/" target="_blank">Stack Overflow</a><a href="https://discordapp.com/">Project Chat</a><a href="https://twitter.com/" target="_blank">Twitter</a></div><div><h5>More</h5><a href="/bappo-developer-docs/blog">Blog</a></div></section><a href="https://code.facebook.com/projects/" target="_blank" class="fbOpenSource"><img src="/bappo-developer-docs/img/oss_logo.png" alt="Facebook Open Source" width="170" height="45"/></a><section class="copyright">Copyright © 2020 Bappo</section></footer></div></body></html>
