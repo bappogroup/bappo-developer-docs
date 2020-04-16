@@ -31,7 +31,7 @@ Examples:
 const newContacts = await $models.Contact.bulkCreate([
   { name: "Alice", email: "a@bappo.com", customer_id: "1" },
   { name: "Bob", email: "b@bappo.com", customer_id: "1" },
-  { name: "Charles", email: "c@bappo.com", customer_id: "2" }
+  { name: "Charles", email: "c@bappo.com", customer_id: "2" },
 ]);
 ```
 
@@ -47,7 +47,7 @@ Examples:
 ```javascript
 $models.Contact.bulkUpdate([
   { id: "1", name: "a.new@bappo.com" },
-  { id: "2", customer_id: "2" }
+  { id: "2", customer_id: "2" },
 ]);
 ```
 
@@ -63,7 +63,7 @@ Examples:
 const newContact = await $models.Contact.create({
   name: "Alice",
   email: "a@bappo.com",
-  customer_id: "1"
+  customer_id: "1",
 });
 ```
 
@@ -78,8 +78,8 @@ Examples:
 ```javascript
 $models.Contact.destroy({
   where: {
-    customer_id: "1"
-  }
+    customer_id: "1",
+  },
 });
 ```
 
@@ -97,7 +97,7 @@ $models.Contact.destroyById("1");
 
 ### `findAll()`
 
-**static findAll(options?: { attributes?: [OptionAttribute](#OptionAttribute), where?: [OptionWhere](#OptionWhere), include?: [OptionInclude](#OptionInclude)[], page?: [OptionPage](#OptionPage) }): Promise<[ObjectModel](#ObjectModel)[]>**
+**static findAll(options?: { attributes?: [OptionAttribute](#OptionAttribute), where?: [OptionWhere](#OptionWhere), include?: [OptionInclude](#OptionInclude)[], page?: [OptionPage](#OptionPage), order?: [OptionOrder](#OptionOrder) }): Promise<[ObjectModel](#ObjectModel)[]>**
 
 Find records in the database matching the query.
 
@@ -111,12 +111,13 @@ const customers = await $models.Customer.findAll({
   },
   offset: 100,
   limit: 50
+  order:[['age','ASC']]
 });
 ```
 
 ### `findAndCountAll()`
 
-**static findAndCountAll(options?: { attributes?: [OptionAttribute](#OptionAttribute), where?: [OptionWhere](#OptionWhere), include?: [OptionInclude](#OptionInclude)[], page?: [OptionPage](#OptionPage) }): Promise<{ records: [ObjectModel](#ObjectModel)[], total: number }>**
+**static findAndCountAll(options?: { attributes?: [OptionAttribute](#OptionAttribute), where?: [OptionWhere](#OptionWhere), include?: [OptionInclude](#OptionInclude)[], page?: [OptionPage](#OptionPage), order?: [OptionOrder](#OptionOrder) }): Promise<{ records: [ObjectModel](#ObjectModel)[], total: number }>**
 
 Find records in the database matching the query (with offset and limit applied)
 and get the total number of records matching the query.
@@ -127,10 +128,11 @@ Examples:
 const { records, total } = await $models.Customer.findAndCountAll({
   include: [{ as: "contacts" }],
   where: {
-    name: "Coles"
+    name: "Coles",
   },
   offset: 100,
-  limit: 50
+  limit: 50,
+  order:[['age','ASC']]
 });
 ```
 
@@ -144,7 +146,7 @@ Examples:
 
 ```javascript
 const customer = await $models.Customer.findById("1", {
-  include: [{ as: "contacts" }]
+  include: [{ as: "contacts" }],
 });
 ```
 
@@ -160,8 +162,8 @@ Examples:
 const customer = await $models.Customer.findOne({
   include: [{ as: "contacts" }],
   where: {
-    name: "Coles"
-  }
+    name: "Coles",
+  },
 });
 ```
 
@@ -178,8 +180,8 @@ $models.Contact.update(
   { name: "Bob" },
   {
     where: {
-      name: "Alice"
-    }
+      name: "Alice",
+    },
   }
 );
 ```
@@ -201,7 +203,7 @@ Example:
 ```javascript
 const contactRecordObject = {
   name: "Alice",
-  customer_id: "1"
+  customer_id: "1",
 };
 ```
 
@@ -228,16 +230,16 @@ Example:
 ```javascript
 const contactsFromColesNamedAlice = await $models.Contact.findAll({
   where: {
-    name: "Alice"
+    name: "Alice",
   },
   include: [
     {
       as: "customer",
       where: {
-        name: "Coles"
-      }
-    }
-  ]
+        name: "Coles",
+      },
+    },
+  ],
 });
 ```
 
@@ -253,17 +255,17 @@ The `where` option lets you filter a query.
 // Find all contacts of customer 1
 $models.Contact.findAll({
   where: {
-    customer_id: "1"
-  }
+    customer_id: "1",
+  },
 });
 
 // Find all contacts whose birthday is in July 1980
 $models.Contact.findAll({
   where: {
     birthday: {
-      $between: ["1980-07-01", "1980-07-31"]
-    }
-  }
+      $between: ["1980-07-01", "1980-07-31"],
+    },
+  },
 });
 ```
 
@@ -295,23 +297,23 @@ $models.Contact.findAll({
     $or: [
       {
         birthday: {
-          $between: ["1980-07-01", "1980-07-31"]
-        }
+          $between: ["1980-07-01", "1980-07-31"],
+        },
       },
       {
         $and: [
           {
-            customer_id: "1"
+            customer_id: "1",
           },
           {
             name: {
-              iLike: "alice%"
-            }
-          }
-        ]
-      }
-    ]
-  }
+              iLike: "alice%",
+            },
+          },
+        ],
+      },
+    ],
+  },
 });
 ```
 
@@ -325,6 +327,18 @@ Example:
 // get the 21st - 30th customers
 const tenCustomers = await $models.Customer.findAll({
   offset: 20,
-  limit: 10
+  limit: 10,
+});
+```
+
+### OptionOrder: array[]
+
+The `order` option takes an array of items to order the query. These items are themselves in the form [column, direction]. The column will be escaped correctly and the direction will be checked in a whitelist of valid directions (such as ASC, DESC, NULLS FIRST).
+
+Example: 
+```javascript
+// find all customers sorted by name ascending first, then ordered by their age descending if share the same name.
+const tenCustomers = await $models.Customer.findAll({
+  order: [[name, 'ASC'], [age, 'DESC']]
 });
 ```
