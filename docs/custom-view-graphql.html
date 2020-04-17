@@ -162,9 +162,9 @@ When your component renders, <code>useMutation</code> returns a tuple that inclu
 <tbody>
 <tr><td style="text-align:center"><code>variables</code></td><td style="text-align:center">{ [key: string]: any }</td><td style="text-align:center">An object containing all of the variables your query needs to execute</td></tr>
 <tr><td style="text-align:center"><code>updateConfigs</code></td><td style="text-align:center">(cache: ApolloCache<T>, mutationResult: <br>FetchResult<T>) =&gt; void</td><td style="text-align:center">A function used to update the cache after a mutation occurs</td></tr>
-<tr><td style="text-align:center"><code>optimisticResponse</code></td><td style="text-align:center">Object</td><td style="text-align:center">Provide a mutation response before the result comes back from the server</td></tr>
-<tr><td style="text-align:center"><code>refetchQueries</code></td><td style="text-align:center"><code>Array&lt;any&gt;</code></td><td style="text-align:center">An array or function that allows you to specify which queries you want to refetch after a mutation has occurred</td></tr>
-<tr><td style="text-align:center"><code>awaitRefetchQueries</code></td><td style="text-align:center">boolean</td><td style="text-align:center">An object containing all of the variables your query needs to execute</td></tr>
+<tr><td style="text-align:center"><code>optimisticResponse</code>(coming soon)</td><td style="text-align:center">Object</td><td style="text-align:center">Provide a mutation response before the result comes back from the server</td></tr>
+<tr><td style="text-align:center"><code>refetchQueries</code>(coming soon)</td><td style="text-align:center"><code>Array&lt;any&gt;</code></td><td style="text-align:center">An array or function that allows you to specify which queries you want to refetch after a mutation has occurred</td></tr>
+<tr><td style="text-align:center"><code>awaitRefetchQueries</code>(coming soon)</td><td style="text-align:center">boolean</td><td style="text-align:center">An object containing all of the variables your query needs to execute</td></tr>
 </tbody>
 </table>
 <h2><a class="anchor" aria-hidden="true" name="gql-syntax"></a><a href="#gql-syntax" aria-hidden="true" class="hash-link" ><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Gql syntax</h2>
@@ -187,7 +187,33 @@ When your component renders, <code>useMutation</code> returns a tuple that inclu
 <h4><a class="anchor" aria-hidden="true" name="example"></a><a href="#example" aria-hidden="true" class="hash-link" ><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Example:</h4>
 <pre><code class="hljs css javascript"><span class="hljs-keyword">const</span> CREATE_CUSTOMER = gql<span class="hljs-string">`
   mutation createCustomer($name: String!) {
-    createCustomer(input: { name: $name }) {
+    createCustomer(input: { name: 'Heloise' }) {
+      id
+      name
+    }
+  }
+`</span>;
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" name="update-a-record"></a><a href="#update-a-record" aria-hidden="true" class="hash-link" ><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Update a record</h3>
+<h4><a class="anchor" aria-hidden="true" name="mutation-syntax"></a><a href="#mutation-syntax" aria-hidden="true" class="hash-link" ><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Mutation Syntax</h4>
+<p><strong>updateOne{objectName} ($id: String ,$input: { [key: fieldName]: fieldValue })</strong></p>
+<h4><a class="anchor" aria-hidden="true" name="example"></a><a href="#example" aria-hidden="true" class="hash-link" ><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Example:</h4>
+<pre><code class="hljs css javascript"><span class="hljs-keyword">const</span> UPDATE_CUSTOMER = gql<span class="hljs-string">`
+  mutation updateOneCustomer($id: String!, $input: any) {
+    updateOneCustomer(id:16 ,input: { name: 'Heloise' }) {
+      id
+      name
+    }
+  }
+`</span>;
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" name="delete-a-record"></a><a href="#delete-a-record" aria-hidden="true" class="hash-link" ><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Delete a record</h3>
+<h4><a class="anchor" aria-hidden="true" name="mutation-syntax"></a><a href="#mutation-syntax" aria-hidden="true" class="hash-link" ><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Mutation Syntax</h4>
+<p><strong>deleteOne{objectName} ($id: String)</strong></p>
+<h4><a class="anchor" aria-hidden="true" name="example"></a><a href="#example" aria-hidden="true" class="hash-link" ><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Example:</h4>
+<pre><code class="hljs css javascript"><span class="hljs-keyword">const</span> DELETE_CUSTOMER = gql<span class="hljs-string">`
+  mutation deleteOneCustomer($id: Integer!) {
+    deleteOneCustomer(id:16) {
       id
       name
     }
@@ -203,6 +229,34 @@ The sort order (ascending vs. descending) is set by specifying the <code>ASC</co
 <pre><code class="hljs css javascript"><span class="hljs-keyword">const</span> GET_ALL_CUSTOMERS_IN_ORDER = gql<span class="hljs-string">`
   query Customer {
     Customer_all(order: [{ name: "ASC" }, { age: "ASC" }]){
+        id
+        name
+    }
+  }
+`</span>;
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" name="find-all-with-text-search"></a><a href="#find-all-with-text-search" aria-hidden="true" class="hash-link" ><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Find all with text search</h3>
+<h4><a class="anchor" aria-hidden="true" name="query-input-syntax"></a><a href="#query-input-syntax" aria-hidden="true" class="hash-link" ><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Query Input Syntax</h4>
+<p><strong>{objectName}_all ($search: String )</strong></p>
+<h4><a class="anchor" aria-hidden="true" name="example"></a><a href="#example" aria-hidden="true" class="hash-link" ><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Example:</h4>
+<pre><code class="hljs css javascript"><span class="hljs-keyword">const</span> GET_ALL_CUSTOMERS_WITH_TEXT_SEARCH = gql<span class="hljs-string">`
+  query Customer {
+    Customer_all(search: 'Rebecca'){
+        id
+        name
+    }
+  }
+`</span>;
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" name="find-all-with-query-pagination"></a><a href="#find-all-with-query-pagination" aria-hidden="true" class="hash-link" ><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Find all with query pagination</h3>
+<p>The input <code>limit</code> and <code>offset</code> are used for pagination.
+<code>limit</code> specifies the number of records to retain from the result set and <code>offset</code> determines which slice to retain from the results.</p>
+<h4><a class="anchor" aria-hidden="true" name="query-input-syntax"></a><a href="#query-input-syntax" aria-hidden="true" class="hash-link" ><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Query Input Syntax</h4>
+<p><strong>{objectName}_all ($limit: Integer, $offset: Integer )</strong></p>
+<h4><a class="anchor" aria-hidden="true" name="example"></a><a href="#example" aria-hidden="true" class="hash-link" ><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Example:</h4>
+<pre><code class="hljs css javascript"><span class="hljs-keyword">const</span> GET_ALL_CUSTOMERS_WITH_PAGINATION = gql<span class="hljs-string">`
+  query Customer {
+    Customer_all(limit: 5, offset: 5){
         id
         name
     }
