@@ -5,6 +5,7 @@
     "previous": "Previous",
     "create-custom-view": "Create a Custom View",
     "custom-view-global": "$global",
+    "custom-view-graphql": "graphql",
     "custom-view-models": "$models",
     "custom-view-navigation": "$navigation",
     "custom-view-popup": "$popup",
