@@ -1,0 +1,206 @@
+<html lang="en"><head><meta charset="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>graphql · Bappo Developer</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta property="og:title" content="graphql · Bappo Developer"/><meta property="og:type" content="website"/><meta property="og:url" content="https://bappo.com/bappo-developer-docs/index.html"/><meta property="og:description" content="# Reference"/><link rel="shortcut icon" href="/bappo-developer-docs/img/favicon.png"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><link rel="stylesheet" href="/bappo-developer-docs/css/main.css"/></head><body class="sideNavVisible"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/bappo-developer-docs/"><img class="logo" src="/bappo-developer-docs/img/favicon.png"/><h2 class="headerTitle">Bappo Developer</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li><a href="/bappo-developer-docs/docs/getting-started.html" target="_self">Tutorial</a></li><li><a href="/bappo-developer-docs/docs/custom-view-models.html" target="_self">Reference</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="container docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><i></i></div><h2><i>›</i><span>Custom View</span></h2></div><div class="navGroups"><div class="navGroup navGroupActive"><h3>Custom View</h3><ul><li class="navListItem"><a class="navItem" href="/bappo-developer-docs/docs/custom-view-models.html">$models</a></li><li class="navListItem"><a class="navItem" href="/bappo-developer-docs/docs/custom-view-popup.html">$popup</a></li><li class="navListItem"><a class="navItem" href="/bappo-developer-docs/docs/custom-view-navigation.html">$navigation</a></li><li class="navListItem"><a class="navItem" href="/bappo-developer-docs/docs/custom-view-global.html">$global</a></li><li class="navListItem navListItemActive"><a class="navItem navItemActive" href="/bappo-developer-docs/docs/custom-view-graphql.html">graphql</a></li></ul></div></div></section></div><script>
+          var toggler = document.getElementById('navToggler');
+          var nav = document.getElementById('docsNav');
+          toggler.onclick = function() {
+            nav.classList.toggle('docsSliderActive');
+          };
+        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1>graphql</h1></header><article><div><span><h1><a class="anchor" aria-hidden="true" name="reference"></a><a href="#reference" aria-hidden="true" class="hash-link" ><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Reference</h1>
+<p>Bappo sdk provide a graphql endpoint to query and modify data.</p>
+<h2><a class="anchor" aria-hidden="true" name="api"></a><a href="#api" aria-hidden="true" class="hash-link" ><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>API</h2>
+<h3><a class="anchor" aria-hidden="true" name="gql"></a><a href="#gql" aria-hidden="true" class="hash-link" ><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>gql</h3>
+<p>The gql is a template literal tag. Template literals were introduced in recent versions of ECMAScript to provide embedded expressions (i.e. <code>A string with interpolated ${variables}</code>) and template literal tags exist to provide additional functionality for what would otherwise be a normal template literal.</p>
+<p>In the case of GraphQL, the gql tag is used to surround GraphQL operation and schema language (which are represented as Strings), and makes it easier to differentiate from ordinary strings. This is particularly useful when performing static analysis on GraphQL language (e.g. to enable syntax highlighting, code generation, etc.) and avoids need for tools to &quot;guess&quot; if a string contains GraphQL language.</p>
+<p>Examples:</p>
+<pre><code class="hljs css javascript"><span class="hljs-keyword">import</span> { gql } <span class="hljs-keyword">from</span> <span class="hljs-string">"@bappo/sdk"</span>;
+<span class="hljs-keyword">const</span> GET_CUSTOMERS = gql<span class="hljs-string">`
+  query Customers {
+    Customer_all {
+      id
+      name
+    }
+  }
+`</span>;
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" name="usequery"></a><a href="#usequery" aria-hidden="true" class="hash-link" ><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>useQuery</h3>
+<p>The <code>useQuery</code> is the API for executing queries in your custom view. To run a query, call <code>useQuery</code> and pass it a GraphQL query string.
+When your component renders, <code>useQuery</code> returns an object that contains loading, error, and data properties you can use to render your UI.</p>
+<p>Example:</p>
+<pre><code class="hljs css javascript"><span class="hljs-keyword">import</span> { useQuery, gql } <span class="hljs-keyword">from</span> <span class="hljs-string">"@bappo/sdk"</span>;
+<span class="hljs-keyword">const</span> GET_CUSTOMERS = gql<span class="hljs-string">`
+  query Customer($id: String!) {
+    Customer (id: $id) {
+        id
+        name
+    }
+  }
+`</span>;
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">Hello</span>(<span class="hljs-params"></span>) </span>{
+<span class="hljs-keyword">const</span> { loading, error, data } = useQuery(GET_CUSTOMERS, {
+    <span class="hljs-attr">variables</span>: { <span class="hljs-attr">id</span>: <span class="hljs-string">'edd1bfbf5e90375'</span> },
+  });
+  <span class="hljs-keyword">if</span> (loading) <span class="hljs-keyword">return</span> <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Loading ...<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span></span>;
+  <span class="hljs-keyword">if</span>(error) <span class="hljs-keyword">return</span> <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Error<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span></span>
+  <span class="hljs-keyword">return</span> <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>Hello {data.customer.name}!<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span></span>;
+}
+</code></pre>
+<h4><a class="anchor" aria-hidden="true" name="function-signature"></a><a href="#function-signature" aria-hidden="true" class="hash-link" ><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Function Signature</h4>
+<pre><code class="hljs css javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">useQuery</span>&lt;<span class="hljs-title">TData</span> = <span class="hljs-title">any</span>, <span class="hljs-title">TVariables</span> = <span class="hljs-title">OperationVariables</span>&gt;(<span class="hljs-params">
+  query: DocumentNode,
+  options?: QueryOptions&lt;TData, TVariables&gt;,
+</span>): <span class="hljs-title">QueryResult</span>&lt;<span class="hljs-title">TData</span>&gt; </span>{}
+</code></pre>
+<h4><a class="anchor" aria-hidden="true" name="params"></a><a href="#params" aria-hidden="true" class="hash-link" ><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Params</h4>
+<p>**query</p>
+<table>
+<thead>
+<tr><th style="text-align:center">Param</th><th style="text-align:center">Type</th><th style="text-align:center">Description</th></tr>
+</thead>
+<tbody>
+<tr><td style="text-align:center"><code>query</code></td><td style="text-align:center">DocumentNode</td><td style="text-align:center">A GraphQL query document parsed into an AST</td></tr>
+</tbody>
+</table>
+<p>**options</p>
+<table>
+<thead>
+<tr><th style="text-align:center">Param</th><th style="text-align:center">Type</th><th style="text-align:center">Description</th></tr>
+</thead>
+<tbody>
+<tr><td style="text-align:center"><code>variables</code></td><td style="text-align:center">{ [key: string]: any }</td><td style="text-align:center">An object containing all of the variables your query needs to execute</td></tr>
+</tbody>
+</table>
+<h3><a class="anchor" aria-hidden="true" name="usemutation"></a><a href="#usemutation" aria-hidden="true" class="hash-link" ><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>useMutation</h3>
+<p>Example:</p>
+<pre><code class="hljs css javascript"><span class="hljs-keyword">import</span> { useMutation, gql } <span class="hljs-keyword">from</span> <span class="hljs-string">"@bappo/sdk"</span>;
+<span class="hljs-keyword">const</span> GET_CUSTOMERS = gql<span class="hljs-string">`
+  query Customers {
+    Customer_all {
+      id
+      name
+    }
+  }
+`</span>;
+<span class="hljs-keyword">const</span> GET_CUSTOMERS_2 = gql<span class="hljs-string">`
+  query activeCustomers {
+    Customer_all(where: {
+      active: true
+    }) {
+      id
+      name
+    }
+  }
+`</span>;
+<span class="hljs-keyword">const</span> CREATE_CUSTOMER = gql<span class="hljs-string">`
+  mutation createCustomer($name: String!) {
+    createCustomer(input: { name: $name }) {
+      id
+      name
+    }
+  }
+`</span>;
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">List</span>(<span class="hljs-params"></span>) </span>{
+  <span class="hljs-keyword">const</span> [createCustomer, result] = useMutation(CREATE_CUSTOMER, {
+    <span class="hljs-attr">variables</span>: {
+      <span class="hljs-attr">name</span>: <span class="hljs-string">"default name"</span> <span class="hljs-comment">// will be overridden</span>
+    },
+    <span class="hljs-attr">updateConfigs</span>: [
+      {
+        <span class="hljs-attr">type</span>: <span class="hljs-string">"create"</span>,
+        <span class="hljs-attr">updateQuery</span>: GET_CUSTOMERS,
+        <span class="hljs-attr">behaviour</span>: <span class="hljs-string">"append"</span>
+      }
+    ],
+    <span class="hljs-attr">refetchQueries</span>: [GET_CUSTOMERS_2]
+  });
+  <span class="hljs-keyword">const</span> { loading, error } = result;
+  <span class="hljs-keyword">return</span> (
+    <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">button</span>
+        <span class="hljs-attr">onClick</span>=<span class="hljs-string">{()</span> =&gt;</span>
+          createCustomer({
+            variables: {
+              name: "qweqwe"
+            }
+          })
+        }
+      &gt;
+        Create a Customer
+      <span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+      {loading &amp;&amp; <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>mutation loading...<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>}
+      {error &amp;&amp; <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>mutation failed<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>}
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>
+  );
+}
+</code></pre>
+<h4><a class="anchor" aria-hidden="true" name="function-signature"></a><a href="#function-signature" aria-hidden="true" class="hash-link" ><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Function Signature</h4>
+<pre><code class="hljs css javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">useMutation</span>&lt;<span class="hljs-title">TData</span> = <span class="hljs-title">any</span>, <span class="hljs-title">TVariables</span> = <span class="hljs-title">OperationVariables</span>&gt;(<span class="hljs-params">
+  mutation: DocumentNode,
+  options?: MutationOptions&lt;TData, TVariables&gt;,
+</span>): <span class="hljs-title">MutationTuple</span>&lt;<span class="hljs-title">TData</span>, <span class="hljs-title">TVariables</span>&gt; </span>{}
+</code></pre>
+<h4><a class="anchor" aria-hidden="true" name="params"></a><a href="#params" aria-hidden="true" class="hash-link" ><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Params</h4>
+<p>**mutation</p>
+<table>
+<thead>
+<tr><th style="text-align:center">Param</th><th style="text-align:center">Type</th><th style="text-align:center">Description</th></tr>
+</thead>
+<tbody>
+<tr><td style="text-align:center"><code>mutation</code></td><td style="text-align:center">DocumentNode</td><td style="text-align:center">A GraphQL query document parsed into an AST</td></tr>
+</tbody>
+</table>
+<p>**options</p>
+<table>
+<thead>
+<tr><th style="text-align:center">Param</th><th style="text-align:center">Type</th><th style="text-align:center">Description</th></tr>
+</thead>
+<tbody>
+<tr><td style="text-align:center"><code>variables</code></td><td style="text-align:center">{ [key: string]: any }</td><td style="text-align:center">An object containing all of the variables your query needs to execute</td></tr>
+<tr><td style="text-align:center"><code>updateConfigs</code></td><td style="text-align:center">(cache: ApolloCache<T>, mutationResult: <br>FetchResult<T>) =&gt; void</td><td style="text-align:center">A function used to update the cache after a mutation occurs</td></tr>
+<tr><td style="text-align:center"><code>optimisticResponse</code></td><td style="text-align:center">Object</td><td style="text-align:center">Provide a mutation response before the result comes back from the server</td></tr>
+<tr><td style="text-align:center"><code>refetchQueries</code></td><td style="text-align:center"><code>Array&lt;any&gt;</code></td><td style="text-align:center">An array or function that allows you to specify which queries you want to refetch after a mutation has occurred</td></tr>
+<tr><td style="text-align:center"><code>awaitRefetchQueries</code></td><td style="text-align:center">boolean</td><td style="text-align:center">An object containing all of the variables your query needs to execute</td></tr>
+</tbody>
+</table>
+<h2><a class="anchor" aria-hidden="true" name="gql-syntax"></a><a href="#gql-syntax" aria-hidden="true" class="hash-link" ><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Gql syntax</h2>
+<h3><a class="anchor" aria-hidden="true" name="find-all-records"></a><a href="#find-all-records" aria-hidden="true" class="hash-link" ><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Find all records</h3>
+<h4><a class="anchor" aria-hidden="true" name="query-syntax"></a><a href="#query-syntax" aria-hidden="true" class="hash-link" ><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Query Syntax</h4>
+<p>**{objectName}_all()</p>
+<h4><a class="anchor" aria-hidden="true" name="example"></a><a href="#example" aria-hidden="true" class="hash-link" ><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Example:</h4>
+<pre><code class="hljs css javascript"><span class="hljs-keyword">const</span> GET_ALL_CUSTOMERS = gql<span class="hljs-string">`
+  query Customer {
+    Customer_all{
+        id
+        name
+    }
+  }
+`</span>;
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" name="insert-a-single-object"></a><a href="#insert-a-single-object" aria-hidden="true" class="hash-link" ><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Insert a single object</h3>
+<h4><a class="anchor" aria-hidden="true" name="mutation-syntax"></a><a href="#mutation-syntax" aria-hidden="true" class="hash-link" ><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Mutation Syntax</h4>
+<p>**create{objectName} ($input: { [key: fieldName]: fieldValue })</p>
+<h4><a class="anchor" aria-hidden="true" name="example"></a><a href="#example" aria-hidden="true" class="hash-link" ><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Example:</h4>
+<pre><code class="hljs css javascript"><span class="hljs-keyword">const</span> CREATE_CUSTOMER = gql<span class="hljs-string">`
+  mutation createCustomer($name: String!) {
+    createCustomer(input: { name: $name }) {
+      id
+      name
+    }
+  }
+`</span>;
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" name="find-all-with-sorting"></a><a href="#find-all-with-sorting" aria-hidden="true" class="hash-link" ><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Find all with sorting</h3>
+<p>Query results can be sorted by using the order argument.
+The sort order (ascending vs. descending) is set by specifying the <code>ASC</code> or <code>DESC</code> enum value for the column name in the order input object, e.g. {name: ASC}.</p>
+<h4><a class="anchor" aria-hidden="true" name="query-input-syntax"></a><a href="#query-input-syntax" aria-hidden="true" class="hash-link" ><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Query Input Syntax</h4>
+<p>**{objectName}_all ($order: { [key: objectName]: OrderDirection }[] )</p>
+<h4><a class="anchor" aria-hidden="true" name="example"></a><a href="#example" aria-hidden="true" class="hash-link" ><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Example:</h4>
+<pre><code class="hljs css javascript"><span class="hljs-keyword">const</span> GET_ALL_CUSTOMERS_IN_ORDER = gql<span class="hljs-string">`
+  query Customer {
+    Customer_all(order: [{ name: "ASC" }, { age: "ASC" }]){
+        id
+        name
+    }
+  }
+`</span>;
+</code></pre>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="custom-view-global.html">← $global</a></div></div></div></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/bappo-developer-docs/" class="nav-home"><img src="/bappo-developer-docs/img/favicon.png" alt="Bappo Developer" width="66" height="58"/></a><div><h5>Docs</h5><a href="/bappo-developer-docs/docs/en/getting-started.html">Getting Started</a><a href="/bappo-developer-docs/docs/en/doc2.html">Guides (or other categories)</a><a href="/bappo-developer-docs/docs/en/doc3.html">API Reference (or other categories)</a></div><div><h5>Community</h5><a href="/bappo-developer-docs/en/users.html">User Showcase</a><a href="http://stackoverflow.com/questions/tagged/" target="_blank">Stack Overflow</a><a href="https://discordapp.com/">Project Chat</a><a href="https://twitter.com/" target="_blank">Twitter</a></div><div><h5>More</h5><a href="/bappo-developer-docs/blog">Blog</a></div></section><a href="https://code.facebook.com/projects/" target="_blank" class="fbOpenSource"><img src="/bappo-developer-docs/img/oss_logo.png" alt="Facebook Open Source" width="170" height="45"/></a><section class="copyright">Copyright © 2020 Bappo</section></footer></div></body></html>
