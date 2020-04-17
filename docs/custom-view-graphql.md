@@ -75,7 +75,7 @@ function useQuery<TData = any, TVariables = OperationVariables>(
 
 ### useMutation
 The `useMutation` is the API for executing mutations in your custom view. To run a mutations, call `mutations` and pass it a GraphQL  string that represents the mutation.
-When your component renders, `useQuery` returns a tuple that includes:
+When your component renders, `useMutation` returns a tuple that includes:
 
 - A mutate function that you can call at any time to execute the mutation
 - An object with fields that represent the current status of the mutation's execution
