@@ -162,9 +162,9 @@ function useMutation<TData = any, TVariables = OperationVariables>(
 | :-----------------------: | :------------------------------------------------------------------: | :------------------------------------------------------------------------------------: |
 |    `variables`            |  { [key: string]: any }                                              |  An object containing all of the variables your query needs to execute     |
 |    `updateConfigs`        |  (cache: ApolloCache<T>, mutationResult: <br>FetchResult<T>) => void |  A function used to update the cache after a mutation occurs     |
-|    `optimisticResponse`   |  Object                                                              |  Provide a mutation response before the result comes back from the server     |
-|    `refetchQueries`       |  `Array<any>`                                                        |  An array or function that allows you to specify which queries you want to refetch after a mutation has occurred     |
-|    `awaitRefetchQueries`  |           boolean                                                    |  An object containing all of the variables your query needs to execute     |
+|    `optimisticResponse`(coming soon)   |  Object                                                              |  Provide a mutation response before the result comes back from the server     |
+|    `refetchQueries`(coming soon)       |  `Array<any>`                                                        |  An array or function that allows you to specify which queries you want to refetch after a mutation has occurred     |
+|    `awaitRefetchQueries`(coming soon)  |           boolean                                                    |  An object containing all of the variables your query needs to execute     |
 
 
 ## Gql syntax
@@ -193,13 +193,46 @@ const GET_ALL_CUSTOMERS = gql`
 ```javascript
 const CREATE_CUSTOMER = gql`
   mutation createCustomer($name: String!) {
-    createCustomer(input: { name: $name }) {
+    createCustomer(input: { name: 'Heloise' }) {
       id
       name
     }
   }
 `;
 ```
+
+### Update a record
+#### Mutation Syntax
+**updateOne{objectName} ($id: String ,$input: { [key: fieldName]: fieldValue })**
+
+#### Example:
+```javascript
+const UPDATE_CUSTOMER = gql`
+  mutation updateOneCustomer($id: String!, $input: any) {
+    updateOneCustomer(id:16 ,input: { name: 'Heloise' }) {
+      id
+      name
+    }
+  }
+`;
+```
+
+### Delete a record
+#### Mutation Syntax
+**deleteOne{objectName} ($id: String)**
+
+#### Example:
+```javascript
+const DELETE_CUSTOMER = gql`
+  mutation deleteOneCustomer($id: Integer!) {
+    deleteOneCustomer(id:16) {
+      id
+      name
+    }
+  }
+`;
+```
+
 
 ### Find all with sorting
 Query results can be sorted by using the order argument.
@@ -213,6 +246,41 @@ The sort order (ascending vs. descending) is set by specifying the `ASC` or `DES
 const GET_ALL_CUSTOMERS_IN_ORDER = gql`
   query Customer {
     Customer_all(order: [{ name: "ASC" }, { age: "ASC" }]){
+        id
+        name
+    }
+  }
+`;
+```
+
+### Find all with text search
+#### Query Input Syntax
+**{objectName}_all ($search: String )**
+
+#### Example:
+```javascript
+const GET_ALL_CUSTOMERS_WITH_TEXT_SEARCH = gql`
+  query Customer {
+    Customer_all(search: 'Rebecca'){
+        id
+        name
+    }
+  }
+`;
+```
+
+### Find all with query pagination
+The input `limit` and `offset` are used for pagination.
+`limit` specifies the number of records to retain from the result set and `offset` determines which slice to retain from the results.
+
+#### Query Input Syntax
+**{objectName}_all ($limit: Integer, $offset: Integer )**
+
+#### Example:
+```javascript
+const GET_ALL_CUSTOMERS_WITH_PAGINATION = gql`
+  query Customer {
+    Customer_all(limit: 5, offset: 5){
         id
         name
     }
