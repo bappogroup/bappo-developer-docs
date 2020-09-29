@@ -24,6 +24,7 @@ being an <a href="#ObjectModel">Object Model</a>.</p>
 <li><a href="#findbyid"><code>findById()</code></a></li>
 <li><a href="#findone"><code>findOne()</code></a></li>
 <li><a href="#update"><code>update()</code></a></li>
+<li><a href="#updateone"><code>updateOne()</code></a></li>
 <li><a href="#fields-this-feature-is-experimental-and-will-change-in-the-future"><code>fields</code> (⚠️ This feature is experimental and will change in the future)</a></li>
 </ul>
 <h3><a class="anchor" aria-hidden="true" name="bulkcreate"></a><a href="#bulkcreate" aria-hidden="true" class="hash-link" ><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>bulkCreate()</code></h3>
@@ -98,7 +99,7 @@ and get the total number of records matching the query.</p>
   },
   <span class="hljs-attr">offset</span>: <span class="hljs-number">100</span>,
   <span class="hljs-attr">limit</span>: <span class="hljs-number">50</span>,
-  <span class="hljs-attr">order</span>:[[<span class="hljs-string">'age'</span>,<span class="hljs-string">'ASC'</span>]]
+  <span class="hljs-attr">order</span>: [[<span class="hljs-string">"age"</span>, <span class="hljs-string">"ASC"</span>]],
 });
 </code></pre>
 <h3><a class="anchor" aria-hidden="true" name="findbyid"></a><a href="#findbyid" aria-hidden="true" class="hash-link" ><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>findById()</code></h3>
@@ -121,14 +122,31 @@ and get the total number of records matching the query.</p>
 });
 </code></pre>
 <h3><a class="anchor" aria-hidden="true" name="update"></a><a href="#update" aria-hidden="true" class="hash-link" ><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>update()</code></h3>
-<p><strong>static update(values: <a href="#RecordObject">RecordObject</a>, options?: { where?: <a href="#OptionWhere">OptionWhere</a> }): Promise&lt;void&gt;</strong></p>
+<p><strong>static update(values: <a href="#RecordObject">RecordObject</a>, options?: { where?: <a href="#OptionWhere">OptionWhere</a> }): Promise&lt;void | RecordObject&gt;</strong></p>
 <p>Update records in the database matching the query.</p>
+<p>Only returns the updated record if the query is by id and only affect one record. Otherwise the response will be null.</p>
+<p>Doesn't trigger <code>EDIT</code> webhook.</p>
 <p>Examples:</p>
 <pre><code class="hljs css javascript">$models.Contact.update(
   { <span class="hljs-attr">name</span>: <span class="hljs-string">"Bob"</span> },
   {
     <span class="hljs-attr">where</span>: {
       <span class="hljs-attr">name</span>: <span class="hljs-string">"Alice"</span>,
+    },
+  }
+);
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" name="updateone"></a><a href="#updateone" aria-hidden="true" class="hash-link" ><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>updateOne()</code></h3>
+<p><strong>static update(values: <a href="#RecordObject">RecordObject</a>, options?: { where?: <a href="#OptionWhere">OptionWhere</a> }): Promise&lt;RecordObject&gt;</strong></p>
+<p>Update one record matching the query and return the updated record.</p>
+<p>If multiple records matches the query, only the first one will be updated.</p>
+<p>Triggers <code>EDIT</code> webhook.</p>
+<p>Examples:</p>
+<pre><code class="hljs css javascript">$models.Contact.update(
+  { <span class="hljs-attr">name</span>: <span class="hljs-string">"Bob"</span> },
+  {
+    <span class="hljs-attr">where</span>: {
+      <span class="hljs-attr">id</span>: <span class="hljs-string">"123"</span>,
     },
   }
 );
@@ -253,7 +271,10 @@ $models.Contact.findAll({
 <p>Example:</p>
 <pre><code class="hljs css javascript"><span class="hljs-comment">// find all customers sorted by name ascending first, then ordered by their age descending if share the same name.</span>
 <span class="hljs-keyword">const</span> tenCustomers = <span class="hljs-keyword">await</span> $models.Customer.findAll({
-  <span class="hljs-attr">order</span>: [[name, <span class="hljs-string">'ASC'</span>], [age, <span class="hljs-string">'DESC'</span>]]
+  <span class="hljs-attr">order</span>: [
+    [name, <span class="hljs-string">"ASC"</span>],
+    [age, <span class="hljs-string">"DESC"</span>],
+  ],
 });
 </code></pre>
 </span></div></article></div><div class="docs-prevnext"><a class="docs-next button" href="custom-view-popup.html">$popup →</a></div></div></div></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/bappo-developer-docs/" class="nav-home"><img src="/bappo-developer-docs/img/favicon.png" alt="Bappo Developer" width="66" height="58"/></a><div><h5>Docs</h5><a href="/bappo-developer-docs/docs/en/getting-started.html">Getting Started</a><a href="/bappo-developer-docs/docs/en/doc2.html">Guides (or other categories)</a><a href="/bappo-developer-docs/docs/en/doc3.html">API Reference (or other categories)</a></div><div><h5>Community</h5><a href="/bappo-developer-docs/en/users.html">User Showcase</a><a href="http://stackoverflow.com/questions/tagged/" target="_blank">Stack Overflow</a><a href="https://discordapp.com/">Project Chat</a><a href="https://twitter.com/" target="_blank">Twitter</a></div><div><h5>More</h5><a href="/bappo-developer-docs/blog">Blog</a></div></section><a href="https://code.facebook.com/projects/" target="_blank" class="fbOpenSource"><img src="/bappo-developer-docs/img/oss_logo.png" alt="Facebook Open Source" width="170" height="45"/></a><section class="copyright">Copyright © 2020 Bappo</section></footer></div></body></html>
