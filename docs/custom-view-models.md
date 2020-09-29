@@ -132,7 +132,7 @@ const { records, total } = await $models.Customer.findAndCountAll({
   },
   offset: 100,
   limit: 50,
-  order:[['age','ASC']]
+  order: [["age", "ASC"]],
 });
 ```
 
@@ -169,9 +169,13 @@ const customer = await $models.Customer.findOne({
 
 ### `update()`
 
-**static update(values: [RecordObject](#RecordObject), options?: { where?: [OptionWhere](#OptionWhere) }): Promise\<void>**
+**static update(values: [RecordObject](#RecordObject), options?: { where?: [OptionWhere](#OptionWhere) }): Promise\<void | RecordObject>**
 
 Update records in the database matching the query.
+
+Only returns the updated record if the query is by id and only affect one record. Otherwise the response will be null.
+
+Doesn't trigger `EDIT` webhook.
 
 Examples:
 
@@ -181,6 +185,29 @@ $models.Contact.update(
   {
     where: {
       name: "Alice",
+    },
+  }
+);
+```
+
+### `updateOne()`
+
+**static update(values: [RecordObject](#RecordObject), options?: { where?: [OptionWhere](#OptionWhere) }): Promise\<RecordObject>**
+
+Update one record matching the query and return the updated record.
+
+If multiple records matches the query, only the first one will be updated.
+
+Triggers `EDIT` webhook.
+
+Examples:
+
+```javascript
+$models.Contact.update(
+  { name: "Bob" },
+  {
+    where: {
+      id: "123",
     },
   }
 );
@@ -335,10 +362,14 @@ const tenCustomers = await $models.Customer.findAll({
 
 The `order` option takes an array of items to order the query. These items are themselves in the form [column, direction]. The column will be escaped correctly and the direction will be checked in a whitelist of valid directions (such as ASC, DESC, NULLS FIRST).
 
-Example: 
+Example:
+
 ```javascript
 // find all customers sorted by name ascending first, then ordered by their age descending if share the same name.
 const tenCustomers = await $models.Customer.findAll({
-  order: [[name, 'ASC'], [age, 'DESC']]
+  order: [
+    [name, "ASC"],
+    [age, "DESC"],
+  ],
 });
 ```
